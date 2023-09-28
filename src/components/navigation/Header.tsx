@@ -11,6 +11,7 @@ import { colors } from "@/app/colors";
 import Image from "next/image";
 import logoImage from "@/../public/Inner-Garden-nav.png";
 import NavItems from "./NavItems";
+import { RESPONSIVE_SMALL } from "@/app/constants";
 
 const initialPageForm = [
   {
@@ -43,7 +44,7 @@ const initialPageForm = [
 const Header = () => {
   const [initialPages, setInitialPages] = useState(initialPageForm);
   const theme = useTheme();
-  const isSmall = useMediaQuery(theme.breakpoints.down(730));
+  const isSmall = useMediaQuery(theme.breakpoints.down(RESPONSIVE_SMALL));
 
   useEffect(() => {
     if (isSmall) {
