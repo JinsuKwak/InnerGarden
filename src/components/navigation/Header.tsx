@@ -1,8 +1,6 @@
 "use client";
 import React, { useState, useEffect, useMemo } from "react";
 import AppBar from "@mui/material/AppBar";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -59,10 +57,9 @@ const Header = () => {
     <React.Fragment>
       <AppBar sx={{ background: "#fff" }} elevation={1}>
         <Toolbar className="flex">
-          <div className=" relative flex items-center text-2xl h-14 w-14">
+          <div className=" relative flex items-center text-2xl md:h-14 md:w-14 h-12 w-12">
             <Link href="/" className="w-full h-full">
               <Image
-                fill
                 style={{ objectFit: "cover", padding: "0.3rem" }}
                 sizes="auto"
                 src={logoImage}
@@ -73,9 +70,7 @@ const Header = () => {
 
           {isSmall ? (
             <>
-              <Typography sx={{ fontSize: "2rem", paddingLeft: "3%", color: colors.primary_300 }}>
-                Inner Garden
-              </Typography>
+              <Typography className="text-neutral-900 pl-[3%] md:text-3xl text-2xl font-serif	">Inner Garden</Typography>
               <DrawerComp initialPages={initialPages} isSmall={isSmall} />
             </>
           ) : (
@@ -91,46 +86,3 @@ const Header = () => {
 };
 
 export default Header;
-
-// "use client";
-// import React from "react";
-// import Link from "next/link";
-// import { useState } from "react";
-// import NavItem from "./NavItem";
-
-// interface NavbarProps {
-//   currentUser?: User | null;
-// }
-
-// const Navbar = ({ currentUser }: NavbarProps) => {
-//   const [menu, setMenu] = useState(false);
-//   const handleMenu = () => {
-//     setMenu(!menu);
-//   };
-
-//   return (
-//     <nav className="relative z-10 w-full bg-orange-500 text-white">
-//       <div className="flex items-center justify-between mx-5 sm:mx-10 lg:mx-20">
-//         {/* Logo */}
-//         <div className="flex items-center text-2xl h-14">
-//           <Link href="/">Logo</Link>
-//         </div>
-
-//         {/* Responsive/Nav: small */}
-//         <div className="text-2xl sm:hidden">
-//           {menu === false ? <button onClick={handleMenu}>+</button> : <button onClick={handleMenu}>-</button>}
-//         </div>
-
-//         {/* Nav Items */}
-//         <div className="hidden sm:block">
-//           <NavItem currentUser={currentUser} />
-//         </div>
-
-//         {/* Responsive/NavItems: small */}
-//         <div className="block sm:hidden">{menu === false ? null : <NavItem mobile currentUser={currentUser} />}</div>
-//       </div>
-//     </nav>
-//   );
-// };
-
-// export default Navbar;

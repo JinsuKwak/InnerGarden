@@ -13,13 +13,17 @@ const NavItem = ({ label, href }: NavItemProps) => {
   const isActive = pathname === href || pathname.startsWith(`${href}/`);
 
   return (
-    <li
-      className={`text-center border-b-2 cursor-pointer max-w-[360px] min-w-[90px] min-h-[2rem] px-4 py-3 transition mt-1.4 ${
-        isActive ? "border-orange-300" : "border-white"
-      } ${isActive ? "opacity-90" : "opacity-60"}
+    <li>
+      <Link href={href}>
+        <div
+          className={`text-center border-b-2 cursor-pointer max-w-[360px] min-w-[90px] min-h-[2rem] px-4 py-3 transition mt-1.4 ${
+            isActive ? "border-orange-300" : "border-white"
+          } ${isActive ? "opacity-90" : "opacity-60"} transition ease-[in] duration-700 hover:opacity-90
       `}
-    >
-      <Link href={href}>{label}</Link>
+        >
+          {label}
+        </div>
+      </Link>
     </li>
   );
 };
