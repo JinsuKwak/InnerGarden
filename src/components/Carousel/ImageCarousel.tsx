@@ -45,6 +45,7 @@ const ImageCarousel = () => {
         navButtonsAlwaysInvisible={true}
         interval={5000}
         swipe={false}
+        stopAutoPlayOnHover={false}
         className={`w-full overflow-hidden rounded-xl relative ${isSmall ? "h-[50vh]" : "h-[54vh]"}`}
       >
         {items.map((item, i) => (

@@ -40,7 +40,7 @@ const ButtonLink: React.FC<ButtonProps> = ({ label, onClick, disabled, color, is
 
         font-semibold
         ${color ? "bg-orange-400" : "bg" + { color } + "-400"} 
-        ${color ? "hover:bg-orange-500" : "hover:bg" + { color } + "-500"} 
+        ${color ? "hover:bg-gradient-to-l hover:from-orange-200" : "hover:bg" + { color } + "-500"} 
         ${isSmall ? "h-[3.2rem] hover:h-[3.6rem]" : "h-[3.2rem] hover:h-[3.6rem]"}  
         ${isSmall ? "py-1 px-[1rem]" : "py-3 px-[2rem]"}
         ${isSmall ? "min-w-[7rem] px-[1rem]" : " min-w-[8rem] px-[2rem]"}

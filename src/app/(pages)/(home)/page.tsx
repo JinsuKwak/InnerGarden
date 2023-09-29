@@ -5,6 +5,7 @@ import Box from "@mui/material/Box";
 import Container from "@/components/Container";
 import ImageCarousel from "@/components/Carousel/ImageCarousel";
 import BlankBar from "@/components/BlankBar";
+import MainPostsInfo from "@/components/MainPostsInfo";
 
 const Home = () => {
   return (
@@ -12,10 +13,8 @@ const Home = () => {
       <Container>
         <LanguageBar />
         <ImageCarousel />
-        <BlankBar color={"bg-black"} />
-        <Box sx={{ bgcolor: "#cfe8fc", height: "100vh" }} />
-        <div className="h-[100px]">aa</div>
-        <Box sx={{ bgcolor: "#eeeeee", height: "100vh" }} />
+        <BlankBar />
+        <MainPostsInfo />
       </Container>
     </React.Fragment>
   );
