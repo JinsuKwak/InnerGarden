@@ -6,12 +6,13 @@ import LanguageButton from "./LanguageButton";
 import { useTheme } from "@mui/material/styles";
 
 const LanguageBar = () => {
+  const [primary, setPrimary] = useState(true);
+  const [secondary, setSecondary] = useState(false);
   const onClickHandler = (code: string, isActive: boolean) => {
     setPrimary(!primary);
     setSecondary(primary);
   };
-  const [primary, setPrimary] = useState(true);
-  const [secondary, setSecondary] = useState(false);
+
   return (
     <div className="w-[100%] h-[3rem] bg-white flex items-center justify-end">
       <div className="flex justify-end h-fit items-center text-center align-middle text-sm">
