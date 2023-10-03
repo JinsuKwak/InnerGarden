@@ -12,7 +12,7 @@ const page = () => {
           isMainPage={false}
           sections={["announcement", "news"]}
           postsPerPage={PREVEIW_NUM_PAGE}
-          isVeiwOnlyPage={true}
+          isVeiwOnlyPage={false}
           showBlank={true}
         />
       </Container>

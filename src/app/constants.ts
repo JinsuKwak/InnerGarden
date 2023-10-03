@@ -1,4 +1,5 @@
 export const RESPONSIVE_SMALL = 730;
+export const RESPONSIVE_MEDIUM = 1400;
 export const SUPPORTED_LANGUAGE = {
   primary: {
     lang: "Korean",

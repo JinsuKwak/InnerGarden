@@ -4,10 +4,9 @@ import Image from "next/image";
 import { StaticImageData } from "next/image";
 import ButtonLink from "../buttons/ButtonLink";
 import { useTheme } from "@mui/material/styles";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import { RESPONSIVE_SMALL } from "@/app/constants";
 import { DM_Sans } from "next/font/google";
-
+import useIsSmall from "@/app/hooks/useIsSmall";
+import useIsMedium from "@/app/hooks/useIsMedium";
 const font = DM_Sans({
   weight: "300",
   subsets: ["latin"],
@@ -23,8 +22,8 @@ interface ItemProps {
 
 const Carouseltem = ({ item }: { item: ItemProps }) => {
   const theme = useTheme();
-  const isSmall = useMediaQuery(theme.breakpoints.down(RESPONSIVE_SMALL));
-  const isMedium = useMediaQuery(theme.breakpoints.down(1400));
+  const isSmall = useIsSmall();
+  const isMedium = useIsMedium();
   return (
     <Paper>
       <Image src={item.img} fill className="object-cover w-full" alt={item.alt} />
