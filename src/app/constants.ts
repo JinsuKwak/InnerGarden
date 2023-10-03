@@ -9,3 +9,5 @@ export const SUPPORTED_LANGUAGE = {
     code: "EN",
   },
 };
+export const PREVEIW_NUM_MAIN = 5;
+export const PREVEIW_NUM_PAGE = 20;

@@ -1,12 +1,22 @@
 "use client";
 import React from "react";
-import PostPreviews from "./Posts/PostPreviews";
-import useIsSmall from "@/hooks/useIsSmall";
+import PostPreviewContainer from "../../../components/posts/PostPreviewContainer";
+import useIsSmall from "@/app/hooks/useIsSmall";
 import { FaEarthAmericas, FaHeadset } from "react-icons/fa6";
 import Link from "next/link";
 import { Divider } from "@mui/material";
 import Box from "@mui/material/Box";
 import { useState } from "react";
+import { PREVEIW_NUM_MAIN } from "@/app/constants";
+
+// const postParams = {
+//   isMainPage: true,
+//   sections: ["announcement", "news"],
+//   postsPerPage: PREVEIW_NUM_MAIN,
+//   isVeiwOnlyPage: true,
+//   showBlank: true,
+//   sort: "createdTime_dec",
+// };
 
 const MainPostsInfo = () => {
   const isSmall = useIsSmall();
@@ -17,10 +27,18 @@ const MainPostsInfo = () => {
   return (
     <div className={`w-full ${isSmall ? "flex-col" : "flex"}`}>
       <div className={`flex flex-col w-full`}>
-        <span className="font-semibold text-[1em] w-full">Latest Post</span>
+        <Link href="/posts">
+          <span className="font-semibold text-[1em] w-full hover:underline">Latest Post</span>
+        </Link>
         <div className={`w-full ${isSmall ? "flex-col" : "flex justify-between"}`}>
           <div className={`${isSmall ? "w-full" : "w-[60%]"}`}>
-            <PostPreviews />
+            <PostPreviewContainer
+              isMainPage={true}
+              sections={["announcement", "news"]}
+              postsPerPage={PREVEIW_NUM_MAIN}
+              isVeiwOnlyPage={true}
+              showBlank={true}
+            />
           </div>
 
           {isSmall && (

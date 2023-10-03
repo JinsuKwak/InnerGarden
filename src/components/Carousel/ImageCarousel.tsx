@@ -5,7 +5,7 @@ import Carouseltem from "./Carouseltem";
 import InnerGardenCarousel1 from "@/../public/InnerGardenCarousel1.jpg";
 import InnerGardenCarousel2 from "@/../public/InnerGardenCarousel2.jpg";
 import InnerGardenCarousel3 from "@/../public/InnerGardenCarousel3.jpg";
-import ButtonLink from "../Buttons/ButtonLink";
+import ButtonLink from "../buttons/ButtonLink";
 
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";

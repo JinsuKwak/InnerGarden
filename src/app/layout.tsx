@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Header from "@/components/navigation/Header";
 import { CssBaseline } from "@mui/material";
-// import ToastProvider from "@/components/ToastProvider";
+import ToastProvider from "@/components/ToastProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={inter.className}>
         <CssBaseline />
         <Header />
-        {/* <ToastProvider /> */}
+        <ToastProvider />
         {children}
       </body>
     </html>
