@@ -1,15 +1,22 @@
 "use client";
 import React from "react";
 import { Container as MUIContainer } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
 import useIsSmall from "@/app/hooks/useIsSmall";
 
-const Container = ({ children }: { children: React.ReactNode }) => {
-  const theme = useTheme();
+interface ContainerProps {
+  children: React.ReactNode;
+  color?: string;
+}
+
+const Container = ({ children, color = "#fff" }: ContainerProps) => {
   const isSmall = useIsSmall();
   return (
     <React.Fragment>
-      <MUIContainer className={`${isSmall ? "w-[95vw]" : "w-[80vw]"} mt-20`} maxWidth="xl">
+      <MUIContainer
+        className={`${isSmall ? "w-[95vw]" : "w-[80vw]"}  mt-20`}
+        maxWidth="xl"
+        style={{ background: color }}
+      >
         {children}
       </MUIContainer>
     </React.Fragment>

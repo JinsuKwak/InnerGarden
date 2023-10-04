@@ -3,7 +3,6 @@ import { Paper, Button, Typography } from "@mui/material";
 import Image from "next/image";
 import { StaticImageData } from "next/image";
 import ButtonLink from "../buttons/ButtonLink";
-import { useTheme } from "@mui/material/styles";
 import { DM_Sans } from "next/font/google";
 import useIsSmall from "@/app/hooks/useIsSmall";
 import useIsMedium from "@/app/hooks/useIsMedium";
@@ -21,12 +20,11 @@ interface ItemProps {
 }
 
 const Carouseltem = ({ item }: { item: ItemProps }) => {
-  const theme = useTheme();
   const isSmall = useIsSmall();
   const isMedium = useIsMedium();
   return (
-    <Paper>
-      <Image src={item.img} fill className="object-cover w-full" alt={item.alt} />
+    <Paper className={`relative ${isSmall ? "h-[50vh]" : "h-[54vh]"}`}>
+      <Image src={item.img} fill sizes="auto" className="object-cover w-full" alt={item.alt} />
       <Typography
         variant="h1"
         className={`absolute ${isSmall ? "top-5 left-5" : "top-10 left-10"} ${font.className} text-orange-400 ${
@@ -47,7 +45,7 @@ const Carouseltem = ({ item }: { item: ItemProps }) => {
         </Typography>
       )}
       <div className={`absolute ${isSmall ? "bottom-5 right-5" : "bottom-10 right-10"}`}>
-        <ButtonLink label={"JOIN"} href={"/join"} color={"orange"} isSmall={isSmall} />
+        <ButtonLink label={"JOIN"} href={"/join"} color={"orange"} />
       </div>
     </Paper>
   );

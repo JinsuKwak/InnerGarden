@@ -101,12 +101,12 @@ const PostPreviewContainer = ({
         ))}
         {blankPosts}
       </div>
-      <Button onClick={clickToPrevPage} className={"h-3 w-3"}>
+      {/* <Button onClick={clickToPrevPage} className={"h-3 w-3"}>
         Prev
       </Button>
       <Button onClick={clickToNextPage} className={"h-3 w-3"}>
         NEXT
-      </Button>
+      </Button> */}
     </>
   );
 };
