@@ -12,6 +12,6 @@ export default async function fetchPostPreviews(sections: string[]) {
       });
 
       resolve(posts);
-    }, 2000); // 2 seconds delay
+    }, 800);
   });
 }

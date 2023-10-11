@@ -12,3 +12,11 @@ export const SUPPORTED_LANGUAGE = {
 };
 export const PREVEIW_NUM_MAIN = 5;
 export const PREVEIW_NUM_PAGE = 20;
+
+export const ABOUT_US_TOPICS = [
+  { label: "Who Are We?", href: "/about-us/who-are-we" },
+  { label: "Introduction", href: "/about-us/introduction" },
+  { label: "Philosophy", href: "/about-us/philosophy" },
+  { label: "Environment", href: "/about-us/environment" },
+  { label: "Teaching Team", href: "/about-us/teaching-team" },
+];

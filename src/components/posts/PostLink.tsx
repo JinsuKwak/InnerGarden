@@ -7,6 +7,7 @@ import useIsSmall from "@/app/hooks/useIsSmall";
 import { styled } from "@mui/material/styles";
 import { FaTrashCan, FaRegFileLines } from "react-icons/fa6";
 import useIsMedium from "@/app/hooks/useIsMedium";
+import { formatTime } from "@//helpers/dayJS";
 
 interface PostLinkProps {
   postPreview: PostPreview | null;
@@ -25,10 +26,6 @@ const PostLinkProps = ({ postPreview, isVeiwOnlyPage, isMainPage }: PostLinkProp
   const currentUser: TempUser = {
     userID: "4jnsu_ID",
     userRole: 2,
-  };
-
-  const formatTime = (time: number): string => {
-    return "11/11";
   };
 
   const isEditable = (): boolean => {
@@ -87,12 +84,16 @@ const PostLinkProps = ({ postPreview, isVeiwOnlyPage, isMainPage }: PostLinkProp
                         {/* <span>{postPreview.userLastName}</span> */}
                       </>
                     )}
-                    <span className={`flex px-2 w-[4rem] justify-center`}>{formatTime(postPreview.createdTime)}</span>
-                    {postPreview.editedTime && <span>{formatTime(postPreview.editedTime)}</span>}
+                    <span className={`flex px-2 w-[4rem] justify-center`}>
+                      {formatTime(postPreview.createdTime.toString())}
+                    </span>
+                    {postPreview.editedTime && <span>{formatTime(postPreview.editedTime.toString())}</span>}
                   </div>
                 )}
                 {isSmall && (
-                  <span className={`flex px-2 w-[4rem] justify-center`}>{formatTime(postPreview.createdTime)}</span>
+                  <span className={`flex px-2 w-[4rem] justify-center`}>
+                    {formatTime(postPreview.createdTime.toString())}
+                  </span>
                 )}
 
                 {!isVeiwOnlyPage && (

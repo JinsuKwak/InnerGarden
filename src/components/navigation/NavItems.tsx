@@ -12,7 +12,7 @@ import NavItem from "./NavItem";
 
 const navPages = [
   { label: "Home", href: "/" },
-  { label: "About Us", href: "/about-us" },
+  { label: "About Us", href: "/about-us/who-are-we" },
   { label: "Join Us", href: "/join" },
   { label: "Locations", href: "/locations" },
   { label: "Contact", href: "/contact" },

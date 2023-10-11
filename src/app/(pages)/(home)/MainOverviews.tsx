@@ -324,9 +324,9 @@ const MainOverviews = () => {
       </div>
       <Divider className="pt-[5rem]" />
       {/* {############################################## END ###############################################} */}
-      <div className={`pt-[5rem] flex justify-between items-center ${isSmall ? "flex-col" : ""}`}>
+      <div className={`pt-[5rem] flex items-center ${isSmall ? "flex-col" : ""}`}>
         {/* {############### ONE ##############} */}
-        <div className={`w-full flex justify-between items-center flex-col ${isSmall ? "h-full" : "h-[33rem]"}`}>
+        <div className={`w-full flex justify-between items-center flex-col ${isSmall ? "" : ""}`}>
           <div className="flex flex-col items-center">
             <div
               className={`relative ${
@@ -341,7 +341,9 @@ const MainOverviews = () => {
               />
             </div>
             <div
-              className={`relative ${isSmall ? "w-[100%]" : "w-[70%]"} text-black text-base pt-[2rem] font-semibold`}
+              className={`relative ${
+                isSmall ? "w-[100%]" : "w-[70%]"
+              } text-black text-base pt-[2rem] font-semibold h-[14rem]`}
             >
               <div>
                 <span>
@@ -363,9 +365,7 @@ const MainOverviews = () => {
         </div>
         {/* {############### ONE ##############} */}
         {/* {############### TWO ##############} */}
-        <div
-          className={`w-full flex justify-between items-center flex-col ${isSmall ? "h-full pt-[4rem]" : "h-[33rem]"}`}
-        >
+        <div className={`w-full flex justify-between items-center flex-col ${isSmall ? "pt-[4rem]" : ""}`}>
           <div className="flex flex-col items-center">
             <div
               className={`relative ${
@@ -380,7 +380,9 @@ const MainOverviews = () => {
               />
             </div>
             <div
-              className={`relative ${isSmall ? "w-[100%]" : "w-[70%]"} text-black text-base pt-[2rem] font-semibold`}
+              className={`relative ${
+                isSmall ? "w-[100%]" : "w-[70%]"
+              } text-black text-base pt-[2rem] font-semibold h-[14rem]`}
             >
               <div>
                 <span>

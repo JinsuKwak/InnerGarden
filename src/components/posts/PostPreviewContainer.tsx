@@ -31,15 +31,6 @@ const PostPreviewContainer = ({
   const [visiblePostPreviews, setVisiblePostPreviews] = useState<PostPreview[]>([]);
   const [currentBaseIdx, setCurrentBaseIdx] = useState(0);
 
-  // const postParams = {
-  //   isMainPage: true,
-  //   sections: ["announcement", "news"],
-  //   postsPerPage: PREVEIW_NUM_MAIN,
-  //   isVeiwOnlyPage: true,
-  //   showBlank: true,
-  //   sort: "createdTime_dec",
-  // };
-
   const clickToNextPage = () => {
     if (currentBaseIdx + postsPerPage >= allPostPreviews.length) {
       setCurrentBaseIdx(currentBaseIdx);

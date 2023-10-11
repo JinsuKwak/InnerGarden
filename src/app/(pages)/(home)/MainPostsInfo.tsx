@@ -9,15 +9,6 @@ import Box from "@mui/material/Box";
 import { useState } from "react";
 import { PREVEIW_NUM_MAIN } from "@/app/constants";
 
-// const postParams = {
-//   isMainPage: true,
-//   sections: ["announcement", "news"],
-//   postsPerPage: PREVEIW_NUM_MAIN,
-//   isVeiwOnlyPage: true,
-//   showBlank: true,
-//   sort: "createdTime_dec",
-// };
-
 const MainPostsInfo = () => {
   const isSmall = useIsSmall();
   const [isHoveredHeadset, setIsHoveredHeadset] = useState(false);

@@ -9,7 +9,7 @@ import Link from "next/link";
 import DrawerComp from "./Drawer";
 import { colors } from "@/app/colors";
 import Image from "next/image";
-import logoImage from "@/../public/Inner-Garden-nav.png";
+import logoImage from "@/../public/InnerGarden-Nav.png";
 import NavItems from "./NavItems";
 import { RESPONSIVE_SMALL } from "@/app/constants";
 
@@ -48,7 +48,7 @@ const Header = () => {
 
   useEffect(() => {
     if (isSmall) {
-      setInitialPages([{ text: "ABOUT US", route: "/about-us" }, ...initialPageForm]);
+      setInitialPages([{ text: "ABOUT US", route: "/about-us/who-are-we" }, ...initialPageForm]);
     } else {
       setInitialPages([...initialPageForm]);
     }

@@ -2,9 +2,9 @@
 import React from "react";
 import Carousel from "react-material-ui-carousel";
 import Carouseltem from "./Carouseltem";
-import InnerGardenCarousel1 from "@/../public/InnerGardenCarousel1.jpg";
-import InnerGardenCarousel2 from "@/../public/InnerGardenCarousel2.jpg";
-import InnerGardenCarousel3 from "@/../public/InnerGardenCarousel3.jpg";
+import InnerGardenCarousel1 from "@/../public/InnerGarden-Carousel-1.jpg";
+import InnerGardenCarousel2 from "@/../public/InnerGarden-Carousel-2.jpg";
+import InnerGardenCarousel3 from "@/../public/InnerGarden-Carousel-3.jpg";
 import ButtonLink from "../buttons/ButtonLink";
 
 import { useTheme } from "@mui/material/styles";
