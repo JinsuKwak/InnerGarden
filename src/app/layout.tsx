@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import Header from "@/components/navigation/Header";
 import { CssBaseline } from "@mui/material";
 import ToastProvider from "@/components/ToastProvider";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <ToastProvider />
         {children}
+        <Footer />
       </body>
     </html>
   );

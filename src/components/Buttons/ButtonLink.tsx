@@ -96,7 +96,6 @@ const ButtonLink: React.FC<ButtonProps> = ({ label, onClick, disabled, color, is
         h-[3.2rem]
         font-semibold
         ${color ? "bg-orange-400" : "bg" + { color } + "-400"} 
-
         ${isSmall ? "py-1 px-[1rem]" : "py-3 px-[2rem]"}
         ${isSmall ? "min-w-[7rem] px-[1rem]" : " min-w-[8rem] px-[2rem]"}
       `}
