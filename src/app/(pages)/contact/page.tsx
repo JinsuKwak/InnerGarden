@@ -1,39 +1,59 @@
 import React from "react";
-import { ABOUT_US_TOPICS } from "@/app/constants";
-import InnerGardenAboutUsImg from "@/../public/InnerGarden-AboutUs-1.jpeg";
+import { CONTACT_TOPICS } from "@/app/constants";
+import InnerGardenAboutUsImg from "@/../public/InnerGarden-AboutUs-3.jpeg";
 import Image from "next/image";
 import SideNavPageContainer from "@/components/bases/SideNavPageContainer";
+import ButtonLink from "@/components/buttons/ButtonLink";
 
 const Contact = () => {
   return (
-    <SideNavPageContainer title={"About Us"} sideTopics={ABOUT_US_TOPICS}>
-      <div className={`relative w-[100%] h-[6rem] overflow-hidden filter saturate-75`}>
+    <SideNavPageContainer title={"Join Us"} sideTopics={CONTACT_TOPICS}>
+      <div className={`relative w-[100%] h-[7rem] overflow-hidden filter saturate-75`}>
         <Image fill style={{ objectFit: "cover" }} src={InnerGardenAboutUsImg} alt="" sizes="auto" />
       </div>
-      <div className="p-[2rem] flex flex-col">
-        <div className="text-xl font-[500] pb-[2rem]">
-          <span>{"Discover Inner Garden Education's Story"}</span>
-        </div>
-        <div className="text-base pb-[1rem]">
-          <span>
-            {
-              "Since 2009, Inner Garden Education has been a trusted provider of exceptional services in the heart of North West Calgary's Hidden Valley community. With 15 years of experience, we've honed our commitment to excellence."
-            }
-          </span>
-        </div>
-        <div className="text-base pb-[1rem]">
-          <span>
-            {
-              "Our approach to Early Childhood Education is characterized by an engaging, pleasant, and informative curriculum. We're dedicated to creating an environment where children's formative years are filled with meaningful growth and joyful learning."
-            }
-          </span>
-        </div>
-        <div className="text-base">
-          <span>
-            {
-              "At Inner Garden, we believe in nurturing each child's unique potential, offering an enriching experience that goes beyond traditional education. Join us on this delightful educational journey, where every child's precious years are celebrated and transformed into a foundation for a bright future."
-            }
-          </span>
+      <div className="p-[2rem] flex flex-col h-[100%]">
+        <div className="flex flex-col h-[100%] justify-between">
+          <div className="flex flex-col">
+            <div className="flex flex-col pb-[2rem]">
+              <div className="text-xl font-bold pb-[2rem]">
+                <span>{"Front Dest:"}</span>
+              </div>
+              <div className="text-base font-normal pb-[1rem]">
+                <span className="pl-[1rem]">
+                  {`Phone: `}
+                  <a href="tel:+18258631772" className="text-orange-400 underline">
+                    {`+1 (825) 863-1772`}
+                  </a>
+                </span>
+              </div>
+              <div className="text-base font-normal pb-[2rem]">
+                <span className="pl-[1rem]">
+                  {`E-mail: `}
+                  <a href="mailto:reception@innergardenedu.com" className="text-orange-400 underline">
+                    {`reception@innergardenedu.com`}
+                  </a>
+                </span>
+              </div>
+            </div>
+            <div className="flex flex-col">
+              <div className="text-xl font-bold pb-[2rem]">
+                <span>{"Bing Liu - Founder & Chief Director:"}</span>
+              </div>
+              <div className="text-base font-normal pb-[2rem] mb-[6rem]">
+                <span className="pl-[1rem]">
+                  {`E-mail: `}
+                  <a href="mailto:liu.bing@innergardenedu.com" className="text-orange-400 underline">
+                    {`liu.bing@innergardenedu.com`}
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="flex w-[100%] items-center justify-center">
+            <div className="w-[24rem] flex justify-center">
+              <ButtonLink href={"/join/enroll-your-child"} label="Interested to join us?" color="orange" />
+            </div>
+          </div>
         </div>
       </div>
     </SideNavPageContainer>
