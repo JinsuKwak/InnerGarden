@@ -6,13 +6,16 @@ interface SideNavbarProps {
     label: string;
     href: string;
   }[];
+
+  width?: string;
+  isSmall?: boolean;
 }
 
-const SideNavbar = ({ topics }: SideNavbarProps) => {
+const SideNavbar = ({ topics, width = "w-[12.8rem]", isSmall = false }: SideNavbarProps) => {
   return (
-    <ul className={`flex flex-col justify-start overflow-hidden rounded-lg pr-[1rem]`}>
+    <ul className={`flex flex-col justify-start overflow-hidden rounded-lg ${isSmall ? "" : "pr-[1rem]"}`}>
       {topics.map(({ label, href }, i) => {
-        return <SideNavItem key={i} label={label} href={href} />;
+        return <SideNavItem key={i} label={label} href={href} width={width} />;
       })}
     </ul>
   );

@@ -127,7 +127,7 @@ const MainOverviews = () => {
                     }
                   </span>
                 </div>
-                <div className="pt-[1rem] text-xs italic">
+                <div className="pt-[2rem] text-xs italic">
                   <span>
                     {
                       "* The subsidy rates vary based on factors such as the child’s age, family income, and the number of hours of care needed."
@@ -190,7 +190,7 @@ const MainOverviews = () => {
                   isSmall ? "pt-[1rem] text-sm" : "text-base"
                 }`}
               >
-                <div className="pt-[1rem]">
+                <div className="pt-[2rem]">
                   <span>
                     {
                       "At Inner Garden, we believe in empowering our educators and enriching the lives of our children. "

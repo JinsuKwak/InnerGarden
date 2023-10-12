@@ -1,38 +1,58 @@
 import React from "react";
-import Container from "@/components/Container";
-import LanguageBar from "@/components/languages/LanguageBar";
-import PostPreviewContainer from "@/components/posts/PostPreviewContainer";
-import { PREVEIW_NUM_PAGE } from "@/app/constants";
-import SideNavbar from "@/components/navigation/SideNavbar";
 import { ABOUT_US_TOPICS } from "@/app/constants";
 import InnerGardenAboutUsImg from "@/../public/InnerGarden-AboutUs-4.jpeg";
 import Image from "next/image";
+import SideNavPageContainer from "@/components/bases/SideNavPageContainer";
 
 const Environment = () => {
   return (
-    <React.Fragment>
-      <Container>
-        <LanguageBar />
-        <div className="flex justify-between pt-[3rem]">
-          <div className="flex flex-col justify-start">
-            <div className="font-semibold text-4xl">
-              <span>{"About Us"}</span>
-            </div>
-            <div className="pt-[4rem]">
-              <SideNavbar topics={ABOUT_US_TOPICS} />
-            </div>
+    <SideNavPageContainer topics={ABOUT_US_TOPICS}>
+      <div className={`relative w-[100%] h-[6rem] overflow-hidden filter saturate-75`}>
+        <Image fill style={{ objectFit: "cover" }} src={InnerGardenAboutUsImg} alt="" sizes="auto" />
+      </div>
+      <div className="p-[2rem] flex flex-col">
+        <div className="flex flex-col pb-[4rem]">
+          <div className="text-xl font-[500] pb-[2rem]">
+            <span>{"Certification and Safety Standards"}</span>
           </div>
-          <div className="rounded-lg overflow-hidden w-[100%] max-w-[1200px] min-h-[40rem] ml-[4rem] shadow-md  flex flex-col">
-            <div className={`relative w-[100%] h-[6rem] overflow-hidden filter saturate-75`}>
-              <Image fill style={{ objectFit: "cover" }} src={InnerGardenAboutUsImg} alt="" sizes="auto" />
-            </div>
-            <div className="p-[2rem]">
-              <span>{"aboutus contain?er"}</span>
-            </div>
+          <div className="text-base pb-[1rem]">
+            <span>{"- We uphold strict teaching standards and a robust management system."}</span>
+          </div>
+          <div className="text-base pb-[1rem]">
+            <span>{"- Regular safety and hygiene checks guarantee a secure and clean environment."}</span>
+          </div>
+          <div className="text-base">
+            <span>{"- Government-certified and regulated to ensure both legality and top-notch quality."}</span>
           </div>
         </div>
-      </Container>
-    </React.Fragment>
+        <div className="flex flex-col pb-[2rem]">
+          <div className="text-xl font-[500] pb-[2rem]">
+            <span>{"High-Quality Learning Environment"}</span>
+          </div>
+          <div className="text-base pb-[1rem]">
+            <span>
+              {
+                "- Our facility offers a safe, reliable, and nurturing space designed for the holistic well-being of children."
+              }
+            </span>
+          </div>
+          <div className="text-base pb-[1rem]">
+            <span>
+              {
+                "- Explore a wealth of educational resources, from engaging books to enriching music and stimulating games."
+              }
+            </span>
+          </div>
+          <div className="text-base">
+            <span>
+              {
+                "- Our dedicated teachers bring a strong sense of responsibility, providing beneficial education that goes beyond the ordinary."
+              }
+            </span>
+          </div>
+        </div>
+      </div>
+    </SideNavPageContainer>
   );
 };
 

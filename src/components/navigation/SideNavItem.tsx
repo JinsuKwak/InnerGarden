@@ -6,9 +6,10 @@ import { usePathname } from "next/navigation";
 interface SideNavbarItemProps {
   label: string;
   href: string;
+  width: string;
 }
 
-const SideNavItem = ({ label, href }: SideNavbarItemProps) => {
+const SideNavItem = ({ label, href, width }: SideNavbarItemProps) => {
   const pathname = usePathname();
   const isActive = pathname === href;
 
@@ -16,7 +17,7 @@ const SideNavItem = ({ label, href }: SideNavbarItemProps) => {
     <li>
       <Link href={href}>
         <div
-          className={`flex items-center border-b-[2px] cursor-pointer w-[12.8rem] h-[3rem] text-lg px-4 py-1 transition ${
+          className={`flex items-center border-b-[2px] cursor-pointer ${width} h-[3rem] text-lg px-4 py-1 transition ${
             isActive
               ? "border-orange-300 font-semibold bg-gradient-to-r from-orange-200 via-orange-100 to-white"
               : "border-orange-200"
