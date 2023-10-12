@@ -20,3 +20,10 @@ export const ABOUT_US_TOPICS = [
   { label: "Environment", href: "/about-us/environment" },
   { label: "Teaching Team", href: "/about-us/teaching-team" },
 ];
+
+export const JOIN_US_TOPICS = [
+  { label: "Enroll Your Child", href: "/join/enroll-your-child" },
+  { label: "Join as Educator", href: "/join/join-as-educator" },
+];
+
+export const CONTACT_TOPICS = [{ label: "Contact", href: "/contact" }];

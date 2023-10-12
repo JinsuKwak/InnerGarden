@@ -17,8 +17,8 @@ const initialPageForm = [
   {
     text: "JOIN US",
     subPages: [
-      { text: "ENROLL YOUR CHILD", route: "/join/child" },
-      { text: "JOIN AS AN EDUCATOR", route: "/join/educator" },
+      { text: "ENROLL YOUR CHILD", route: "/join/enroll-your-child" },
+      { text: "JOIN AS AN EDUCATOR", route: "/join/join-as-educator" },
       { text: "LOCATIONS", route: "/locations" },
     ],
   },

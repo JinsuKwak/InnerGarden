@@ -5,11 +5,12 @@ import { usePathname } from "next/navigation";
 interface NavItemProps {
   label: string;
   href: string;
+  entry: string;
 }
 
-const NavItem = ({ label, href }: NavItemProps) => {
+const NavItem = ({ label, href, entry }: NavItemProps) => {
   const pathname = usePathname();
-  const isActive = pathname === href || pathname.startsWith(`${href}/`);
+  const isActive = pathname === href || pathname.startsWith(`${entry}/`);
 
   return (
     <li>

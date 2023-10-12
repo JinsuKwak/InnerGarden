@@ -6,7 +6,7 @@ import SideNavPageContainer from "@/components/bases/SideNavPageContainer";
 
 const Environment = () => {
   return (
-    <SideNavPageContainer topics={ABOUT_US_TOPICS}>
+    <SideNavPageContainer title={"About Us"} sideTopics={ABOUT_US_TOPICS}>
       <div className={`relative w-[100%] h-[6rem] overflow-hidden filter saturate-75`}>
         <Image fill style={{ objectFit: "cover" }} src={InnerGardenAboutUsImg} alt="" sizes="auto" />
       </div>

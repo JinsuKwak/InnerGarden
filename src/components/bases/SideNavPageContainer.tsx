@@ -7,13 +7,14 @@ import useIsSmall from "@/app/hooks/useIsSmall";
 
 interface SideNavContainerProps {
   children: React.ReactNode;
-  topics: {
+  title: String;
+  sideTopics: {
     label: string;
     href: string;
   }[];
 }
 
-const SideNavPageContainer = ({ children, topics }: SideNavContainerProps) => {
+const SideNavPageContainer = ({ children, title, sideTopics }: SideNavContainerProps) => {
   const isSmall = useIsSmall();
   return (
     <React.Fragment>
@@ -26,11 +27,11 @@ const SideNavPageContainer = ({ children, topics }: SideNavContainerProps) => {
         >
           <div className="flex flex-col justify-start">
             <div className={`font-semibold text-4xl ${isSmall ? "pb-[2rem]" : ""}`}>
-              <span>{"About Us"}</span>
+              <span>{title}</span>
             </div>
             {!isSmall && (
               <div className="pt-[4rem]">
-                <SideNavbar topics={topics} />
+                <SideNavbar topics={sideTopics} />
               </div>
             )}
           </div>
@@ -43,7 +44,7 @@ const SideNavPageContainer = ({ children, topics }: SideNavContainerProps) => {
           </div>
           {isSmall && (
             <div className="pt-[4rem] w-full">
-              <SideNavbar topics={topics} width={"w-[100%]"} isSmall={true} />
+              <SideNavbar topics={sideTopics} width={"w-[100%]"} isSmall={true} />
             </div>
           )}
         </div>
