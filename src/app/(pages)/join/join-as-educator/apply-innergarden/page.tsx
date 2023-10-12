@@ -15,7 +15,7 @@ const ApplyInnerGarden = () => {
       <div className="p-[2rem] flex flex-col h-[100%]">
         <div className="flex flex-col h-[100%] justify-between items-center">
           <div className="flex flex-col">
-            <div className="flex flex-col">
+            <div className="flex flex-col pb-[1rem]">
               <div className="text-xl font-bold pb-[2rem]">
                 <span>{"A Rewarding Career Awaits:"}</span>
               </div>
@@ -23,7 +23,7 @@ const ApplyInnerGarden = () => {
                 <span>{`At Inner Garden, we are all about nurturing young minds and empowering them to grow. As an Inner Garden Educator, you’ll have the privilege of shaping young lives, teaching valuable life skills, and fostering a love for learning that can last a lifetime.`}</span>
               </div>
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col pb-[1rem]">
               <div className="text-xl font-bold pb-[2rem]">
                 <span>{"How to Apply:"}</span>
               </div>
@@ -92,6 +92,40 @@ const ApplyInnerGarden = () => {
                 </ul>
               </div>
             </div>
+            <div className="flex flex-col text-base font-normal">
+              <div className="text-xl font-bold pb-[2rem]">
+                <span>{"Questions or Need Assistance?"}</span>
+              </div>
+              <div className="pb-[2rem] flex flex-col">
+                <span>{`If you have any questions or need assistance during the application process, feel free to reach out to us.`}</span>
+                <span>{`Our team is here to help you! You can contact us through the following options:`}</span>
+              </div>
+              <div className=" pb-[1rem]">
+                <span className="pl-[1rem]">
+                  {`Phone: `}
+                  <a href="tel:+18258631772" className="text-orange-400 underline">
+                    {`+1 (825) 863-1772`}
+                  </a>
+                </span>
+              </div>
+              <div className="pb-[2rem]">
+                <span className="pl-[1rem]">
+                  {`E-mail: `}
+                  <a href="mailto:reception@innergardenedu.com" className="text-orange-400 underline">
+                    {`reception@innergardenedu.com`}
+                  </a>
+                </span>
+              </div>
+              <span className="pb-[1rem]">
+                {`Additionally, you might find the answers to your queries in our Frequently Asked Questions (FAQ) section. `}
+                <Link href={"/FAQ"}>
+                  <span className="text-orange-400 underline font-normal">{`Check it out`}</span>
+                </Link>
+              </span>
+              <div className="pb-[2rem]">
+                <span>{"We look forward to assisting you on your journey with Inner Garden Education!"}</span>
+              </div>
+            </div>
           </div>
           <div className="w-[24rem] flex justify-center">
             <ButtonLink
@@ -109,3 +143,13 @@ const ApplyInnerGarden = () => {
 };
 
 export default ApplyInnerGarden;
+
+// Questions or Need Assistance?
+// If you have any questions or need assistance during the application process, feel free to reach out to us. Our team is here to help you! You can contact us through the following options:
+
+// - **Email:** [info@innergardenedu.com](mailto:info@innergardenedu.com)
+// - **Phone:** [+1 (825) 863-1772](tel:+18258631772)
+
+// Additionally, you might find the answers to your queries in our Frequently Asked Questions (FAQ) section. Check it out [here](#faq-link).
+
+// We look forward to assisting you on your journey with Inner Garden Education!

@@ -38,6 +38,12 @@ const JoinYourChild = () => {
                   {`Fill out the survey form, and we will get back to you. If you have any further questions, also feel free to contact us.`}
                 </span>
               </div>
+              <span className="pb-[2rem]">
+                {`Additionally, you might find the answers to your queries in our Frequently Asked Questions (FAQ) section. `}
+                <Link href={"/FAQ"}>
+                  <span className="text-orange-400 underline font-normal">{`Check it out`}</span>
+                </Link>
+              </span>
               <div className="font-base pb-[2rem] italic text-sm">
                 <span>{`Thank you for considering Inner Garden for your child’s education. We appreciate your interest and trust in our program and are excited to take the first steps with you and your child.`}</span>
               </div>
