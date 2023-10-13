@@ -27,3 +27,11 @@ export const JOIN_US_TOPICS = [
 ];
 
 export const CONTACT_TOPICS = [{ label: "Contact", href: "/contact" }];
+
+export const RESOURCE_TOPICS = [
+  { label: "10th Anniversary", href: "/resources/tenth-anniversary-speech" },
+  { label: "Subsidy & Grant", href: "/resources/subsidy" },
+  { label: "Employee Welfare", href: "/resources/employee-welfare" },
+  { label: "Published License", href: "/resources/published-license" },
+  { label: "Day Home Agency", href: "/resources/about-home-agencies" },
+];

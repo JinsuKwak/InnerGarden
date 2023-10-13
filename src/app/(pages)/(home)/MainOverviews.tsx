@@ -15,6 +15,7 @@ import ButtonLink from "@/components/buttons/ButtonLink";
 import ButtonLinkOutline from "@/components/buttons/ButtonLinkOutline";
 import { IoCheckmarkSharp, IoDiamondOutline, IoNutritionOutline } from "react-icons/io5";
 import MainSummary from "./MainSummary";
+import { RESOURCE_TOPICS } from "@/app/constants";
 
 const MainOverviews = () => {
   const isSmall = useIsSmall();
@@ -88,7 +89,7 @@ const MainOverviews = () => {
               </div>
             </div>
             <div className="pt-[2rem] w-full">
-              <ButtonLink label={"10th Anniversary Speech"} href={"/posts/announcemnts"} color={"orange"} />
+              <ButtonLink label={"10th Anniversary Speech"} href={RESOURCE_TOPICS[0].href} color={"orange"} />
             </div>
           </div>
           {/* {############### TEXT ##############} */}
@@ -137,7 +138,7 @@ const MainOverviews = () => {
               </div>
             </div>
             <div className="pt-[2rem] w-full">
-              <ButtonLink label={"Learn More"} href={"/posts/announcemnts"} color={"orange"} />
+              <ButtonLink label={"Learn More"} href={RESOURCE_TOPICS[1].href} color={"orange"} />
             </div>
           </div>
           {/* {############### TEXT ##############} */}
@@ -207,7 +208,7 @@ const MainOverviews = () => {
               </div>
             </div>
             <div className="pt-[2rem] w-full">
-              <ButtonLink label={"Empoloyee Welfare"} href={"/posts/announcemnts"} color={"orange"} />
+              <ButtonLink label={"Empoloyee Welfare"} href={RESOURCE_TOPICS[2].href} color={"orange"} />
             </div>
           </div>
           {/* {############### TEXT ##############} */}
@@ -251,7 +252,7 @@ const MainOverviews = () => {
               </div>
             </div>
             <div className="pt-[2rem] w-full">
-              <ButtonLink label={"View License"} href={"/posts/announcemnts"} color={"orange"} />
+              <ButtonLink label={"View License"} href={RESOURCE_TOPICS[3].href} color={"orange"} />
             </div>
           </div>
           {/* {############### TEXT ##############} */}
@@ -316,7 +317,7 @@ const MainOverviews = () => {
               </div>
             </div>
             <div className="pt-[2rem] w-full">
-              <ButtonLink label={"Learn More"} href={"/posts/announcemnts"} color={"orange"} />
+              <ButtonLink label={"Learn More"} href={RESOURCE_TOPICS[4].href} color={"orange"} />
             </div>
           </div>
           {/* {############### TEXT ##############} */}
@@ -360,7 +361,7 @@ const MainOverviews = () => {
             </div>
           </div>
           <div className={`pt-[2rem] ${isSmall ? "w-[100%]" : "w-[70%]"}`}>
-            <ButtonLink label={"Find a Location for Your Child"} href={"/posts/announcemnts"} color={"orange"} />
+            <ButtonLink label={"Find a Location for Your Child"} href={"/join/enroll-your-child"} color={"orange"} />
           </div>
         </div>
         {/* {############### ONE ##############} */}
@@ -394,7 +395,7 @@ const MainOverviews = () => {
             </div>
           </div>
           <div className={`pt-[2rem] ${isSmall ? "w-[100%]" : "w-[70%]"}`}>
-            <ButtonLink label={"Become an Educator"} href={"/posts/announcemnts"} color={"orange"} />
+            <ButtonLink label={"Become an Educator"} href={"/join/join-as-educator"} color={"orange"} />
           </div>
         </div>
         {/* {############### TWO ##############} */}

@@ -12,6 +12,7 @@ import Image from "next/image";
 import logoImage from "@/../public/InnerGarden-Nav.png";
 import NavItems from "./NavItems";
 import { RESPONSIVE_SMALL } from "@/app/constants";
+import { RESOURCE_TOPICS } from "@/app/constants";
 
 const initialPageForm = [
   {
@@ -26,14 +27,14 @@ const initialPageForm = [
     text: "INFORMATIONS",
     subPages: [
       { text: "HOLYDAY AND BREAKS", route: "/posts/announcement/######" },
-      { text: "PUBLISHED LICENSE", route: "/licencse" },
+      { text: "PUBLISHED LICENSE", route: "/resources/published-license" },
     ],
   },
   {
     text: "RESOURCES",
     subPages: [
       { text: "FAQ", route: "/post/faq" },
-      { text: "MORE", route: "/post/resource" },
+      { text: "MORE", route: RESOURCE_TOPICS[0].href },
     ],
   },
   { text: "LASTEST POSTS", route: "/posts" },

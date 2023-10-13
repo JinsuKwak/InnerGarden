@@ -36,7 +36,7 @@ const Home = () => {
             </div>
           </div>
           <div className="w-[10rem] pb-[5rem]">
-            <ButtonLink label="Join Us" href="/join" color={"orange"} />
+            <ButtonLink label="Join Us" href="/join/enroll-your-child" color={"orange"} />
           </div>
         </div>
       </div>

@@ -7,8 +7,8 @@ import ButtonLink from "@/components/buttons/ButtonLink";
 
 const Contact = () => {
   return (
-    <SideNavPageContainer title={"Join Us"} sideTopics={CONTACT_TOPICS}>
-      <div className={`relative w-[100%] h-[7rem] overflow-hidden filter saturate-75`}>
+    <SideNavPageContainer title={"Contact"} sideTopics={CONTACT_TOPICS}>
+      <div className={`relative w-[100%] h-[11rem] overflow-hidden filter saturate-75`}>
         <Image fill style={{ objectFit: "cover" }} src={InnerGardenAboutUsImg} alt="" sizes="auto" />
       </div>
       <div className="p-[2rem] flex flex-col h-[100%]">
@@ -39,7 +39,7 @@ const Contact = () => {
               <div className="text-xl font-bold pb-[2rem]">
                 <span>{"Bing Liu - Founder & Chief Director:"}</span>
               </div>
-              <div className="text-base font-normal pb-[2rem] mb-[6rem]">
+              <div className="text-base font-normal pb-[2rem] mb-[4rem]">
                 <span className="pl-[1rem]">
                   {`E-mail: `}
                   <a href="mailto:liu.bing@innergardenedu.com" className="text-orange-400 underline">

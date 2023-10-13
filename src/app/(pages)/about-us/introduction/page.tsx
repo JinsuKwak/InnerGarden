@@ -7,7 +7,7 @@ import SideNavPageContainer from "@/components/bases/SideNavPageContainer";
 const Introduction = () => {
   return (
     <SideNavPageContainer title={"About Us"} sideTopics={ABOUT_US_TOPICS}>
-      <div className={`relative w-[100%] h-[6rem] overflow-hidden filter saturate-75`}>
+      <div className={`relative w-[100%] h-[9rem] overflow-hidden filter saturate-75`}>
         <Image fill style={{ objectFit: "cover" }} src={InnerGardenAboutUsImg} alt="" sizes="auto" />
       </div>
       <div className="p-[2rem] flex flex-col">

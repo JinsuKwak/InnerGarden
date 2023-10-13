@@ -45,7 +45,7 @@ const Carouseltem = ({ item }: { item: ItemProps }) => {
         </Typography>
       )}
       <div className={`absolute ${isSmall ? "bottom-5 right-5" : "bottom-10 right-10"}`}>
-        <ButtonLink label={"JOIN"} href={"/join"} color={"orange"} />
+        <ButtonLink label={"JOIN"} href={"/join/enroll-your-child"} color={"orange"} />
       </div>
     </Paper>
   );

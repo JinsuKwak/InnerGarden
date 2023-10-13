@@ -9,7 +9,7 @@ import ButtonLink from "@/components/buttons/ButtonLink";
 const JoinYourChild = () => {
   return (
     <SideNavPageContainer title={"Join Us"} sideTopics={JOIN_US_TOPICS}>
-      <div className={`relative w-[100%] h-[7rem] overflow-hidden filter saturate-75`}>
+      <div className={`relative w-[100%] h-[11rem] overflow-hidden filter saturate-75`}>
         <Image fill style={{ objectFit: "cover" }} src={InnerGardenAboutUsImg} alt="" sizes="auto" />
       </div>
       <div className="p-[2rem] flex flex-col h-[100%]">
