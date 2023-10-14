@@ -1,6 +1,6 @@
 import React from "react";
 import { RESOURCE_TOPICS } from "@/app/constants";
-import InnerGardenResourcesImg from "@/../public/InnerGarden-Resources-1.jpeg";
+import InnerGardenResourcesImg from "@/../public/InnerGarden-Main-2.jpg";
 import Image from "next/image";
 import SideNavPageContainer from "@/components/bases/SideNavPageContainer";
 import Link from "next/link";

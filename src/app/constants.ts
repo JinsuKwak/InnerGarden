@@ -35,3 +35,13 @@ export const RESOURCE_TOPICS = [
   { label: "Published License", href: "/resources/published-license" },
   { label: "Day Home Agency", href: "/resources/about-home-agencies" },
 ];
+
+export const LOCATION_TOPICS = [
+  { label: "All Locations", href: "/locations/all" },
+  { label: "English", href: "/locations/english" },
+  { label: "Korean", href: "/locations/korean" },
+  { label: "Chinese", href: "/locations/chinese" },
+  { label: "Others", href: "/locations/others" },
+];
+
+export const LOCATIONS_KEY = "all_locations";

@@ -62,7 +62,7 @@ const MainPostsInfo = () => {
                 onMouseEnter={() => setIsHoveredEarth(true)}
                 onMouseLeave={() => setIsHoveredEarth(false)}
               >
-                <Link href="/locations">
+                <Link href="/locations/all">
                   <FaEarthAmericas className={`${isHoveredEarth ? hoverColor : baseColor} transition-all`} size={70} />
                 </Link>
                 <span

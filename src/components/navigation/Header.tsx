@@ -20,7 +20,7 @@ const initialPageForm = [
     subPages: [
       { text: "ENROLL YOUR CHILD", route: "/join/enroll-your-child" },
       { text: "JOIN AS AN EDUCATOR", route: "/join/join-as-educator" },
-      { text: "LOCATIONS", route: "/locations" },
+      { text: "LOCATIONS", route: "/locations/all" },
     ],
   },
   {
@@ -38,7 +38,7 @@ const initialPageForm = [
     ],
   },
   { text: "LASTEST POSTS", route: "/posts" },
-  { text: "EMPLOYEE WELLFARE", route: "/employee-wellfare" },
+  { text: "EMPLOYEE WELLFARE", route: RESOURCE_TOPICS[2].href },
   { text: "CONTACT", route: "/contact" },
 ];
 

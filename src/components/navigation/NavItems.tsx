@@ -14,7 +14,7 @@ const navPages = [
   { label: "Home", href: "/", entry: "/" },
   { label: "About Us", href: "/about-us/who-are-we", entry: "/about-us" },
   { label: "Join Us", href: "/join/enroll-your-child", entry: "/join" },
-  { label: "Locations", href: "/locations", entry: "/locations" },
+  { label: "Locations", href: "/locations/all", entry: "/locations" },
   { label: "Contact", href: "/contact", entry: "/contact" },
 ];
 
