@@ -148,7 +148,7 @@ const ALLPOSTS: any[] = [
     postID: "11",
   },
   {
-    title: "[12] (post 4) (long fname)",
+    title: "IG Educational Forum Online Lecture – Session 3",
     section: "news",
     userRole: 1,
     userID: "7jnsu",

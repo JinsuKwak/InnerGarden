@@ -14,6 +14,7 @@ interface PostPreviewContainerProps {
   postsPerPage: number;
   isVeiwOnlyPage: boolean;
   showBlank: boolean;
+  displaySections: boolean;
   sort?: string;
 }
 
@@ -23,6 +24,7 @@ const PostPreviewContainer = ({
   postsPerPage,
   isVeiwOnlyPage,
   showBlank,
+  displaySections,
   sort = "createdTime_dec",
 }: PostPreviewContainerProps) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -81,14 +83,20 @@ const PostPreviewContainer = ({
 
   // Create an array of blank posts
   const blankPosts = Array.from({ length: numBlankPosts }, (_, i) => (
-    <PostLink key={`blank_${i}`} postPreview={null} isMainPage={isMainPage} />
+    <PostLink key={`blank_${i}`} postPreview={null} isMainPage={isMainPage} displaySections={displaySections} />
   ));
 
   return (
     <>
       <div className="w-full h-fit">
         {visiblePostPreviews.map((postPreview, i) => (
-          <PostLink key={i} postPreview={postPreview} isVeiwOnlyPage={isVeiwOnlyPage} isMainPage={isMainPage} />
+          <PostLink
+            key={i}
+            postPreview={postPreview}
+            isVeiwOnlyPage={isVeiwOnlyPage}
+            isMainPage={isMainPage}
+            displaySections={displaySections}
+          />
         ))}
         {blankPosts}
       </div>

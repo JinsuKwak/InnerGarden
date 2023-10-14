@@ -57,7 +57,7 @@ const Header = () => {
 
   return (
     <React.Fragment>
-      <AppBar sx={{ background: "#fff" }} elevation={1}>
+      <AppBar sx={{ background: "transparent" }} elevation={1}>
         <Toolbar className="flex">
           <div className=" relative flex items-center text-2xl md:h-14 md:w-14 h-12 w-12">
             <Link href="/" className="w-full h-full">

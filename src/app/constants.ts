@@ -44,4 +44,10 @@ export const LOCATION_TOPICS = [
   { label: "Others", href: "/locations/others" },
 ];
 
+export const POST_TOPICS = [
+  { label: "All Posts", href: "/posts/all" },
+  { label: "Announcements", href: "/posts/announcement" },
+  { label: "News", href: "/posts/news" },
+];
+
 export const LOCATIONS_KEY = "all_locations";

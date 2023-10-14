@@ -18,7 +18,7 @@ const MainPostsInfo = () => {
   return (
     <div className={`w-full ${isSmall ? "flex-col" : "flex"}`}>
       <div className={`flex flex-col w-full`}>
-        <Link href="/posts">
+        <Link href="/posts/all">
           <span className="font-semibold text-[1em] w-full hover:underline">Latest Post</span>
         </Link>
         <div className={`w-full ${isSmall ? "flex-col" : "flex justify-between"}`}>
@@ -29,6 +29,7 @@ const MainPostsInfo = () => {
               postsPerPage={PREVEIW_NUM_MAIN}
               isVeiwOnlyPage={true}
               showBlank={true}
+              displaySections={true}
             />
           </div>
 

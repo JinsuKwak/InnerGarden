@@ -15,7 +15,7 @@ const Footer = () => {
   return (
     <>
       <div className={`${pathName === "/" ? "bg-[#444]" : "bg-[#777]"} h-[1px] pt-[1px]`}></div>
-      <div className={`w-full py-4 ${pathName === "/" ? "bg-[#222] text-[#eee]" : "bg-[#fff] text-[#000]"}`}>
+      <div className={`w-full py-4 ${pathName === "/" ? "bg-[#222] text-[#eee]" : "bg-transparent text-[#000]"}`}>
         <div className="text-sm px-[2rem]">
           <span>{getDate() + " Developed and Maintained by Jinsu Kwak"}</span>
         </div>

@@ -13,6 +13,7 @@ interface PostLinkProps {
   postPreview: PostPreview | null;
   isVeiwOnlyPage?: boolean;
   isMainPage: boolean;
+  displaySections: boolean;
 }
 
 interface TempUser {
@@ -20,7 +21,7 @@ interface TempUser {
   userRole: number;
 }
 
-const PostLinkProps = ({ postPreview, isVeiwOnlyPage, isMainPage }: PostLinkProps) => {
+const PostLinkProps = ({ postPreview, isVeiwOnlyPage, isMainPage, displaySections }: PostLinkProps) => {
   const isSmall = useIsSmall();
   const isMedium = useIsMedium();
   const currentUser: TempUser = {
@@ -54,18 +55,21 @@ const PostLinkProps = ({ postPreview, isVeiwOnlyPage, isMainPage }: PostLinkProp
               <div className={`flex justify-center w-[1.6rem] px-2 text-red-600 `}>
                 {postPreview.isImportant ? "!" : ""}
               </div>
-              {isMainPage && (
-                <Link href={"/" + postPreview.section}>
-                  <span className="flex w-[3rem] pr-2 justify-center hover:underline">
-                    {postPreview.section === "announcement" ? "annc" : postPreview.section}
+              {displaySections && (
+                <Link href={"/posts/" + postPreview.section}>
+                  <span className="flex w-[3.6rem] pr-2 justify-center hover:underline">
+                    {postPreview.section === "announcement" ? "[annc]" : "[" + postPreview.section + "]"}
                   </span>
                 </Link>
               )}
-              <Link href={"/posts/" + postPreview.section + "/" + postPreview.postID} className="w-full truncate">
+              <Link
+                href={"/posts/" + postPreview.section + "/" + postPreview.postID}
+                className="w-full truncate pl-[0.4rem]"
+              >
                 <span className={`pr-2 justify-center hover:underline capitalize`}>{postPreview.title}</span>
               </Link>
             </div>
-            <div className="flex items-center w-[30%] justify-end">
+            <div className="flex items-center w-[40%] justify-end">
               <div className={`flex items-center w-full ${isSmall ? "justify-end" : "justify-center"}`}>
                 {!isSmall && (
                   <div className={`flex w-full items-center justify-end`}>
