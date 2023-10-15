@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { LOCATION_TOPICS } from "@/app/constants";
-import InnerGardenAboutUsImg from "@/../public/InnerGarden-AboutUs-1.jpeg";
+import InnerGardenAboutUsImg from "@/../public/InnerGarden-AboutUs-1.jpg";
 import Image from "next/image";
 import SideNavPageContainer from "@/components/bases/SideNavPageContainer";
 import dynamic from "next/dynamic";
@@ -44,7 +44,7 @@ const LocationsContainer = ({ languageCode }: LocationsContainerProps) => {
   return (
     <SideNavPageContainer title={"Locations"} sideTopics={LOCATION_TOPICS}>
       <div className={`relative w-[100%] h-[7rem] overflow-hidden filter saturate-75`}>
-        <Image fill style={{ objectFit: "cover" }} src={InnerGardenAboutUsImg} alt="" sizes="auto" />
+        <Image fill style={{ objectFit: "cover" }} src={InnerGardenAboutUsImg} alt="" sizes="auto" priority={true} />
       </div>
       <div className="flex flex-col pb-[2rem]">
         <div className="p-[2rem] pb-[1rem] flex flex-col ">

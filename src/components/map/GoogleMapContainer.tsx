@@ -1,8 +1,8 @@
 "use client";
-import { GoogleMap, useLoadScript, Marker, InfoWindowF } from "@react-google-maps/api";
+import { GoogleMap, useLoadScript, MarkerF, InfoWindowF } from "@react-google-maps/api";
 import { Location } from "@/types/Location";
-import { MarkerF } from "@react-google-maps/api";
 import mapStyles from "./mapStyles";
+import { toast } from "react-toastify";
 
 const mapContainerStyle = {
   width: "100%",
@@ -40,7 +40,8 @@ const GoogleMapContainer = ({ locations }: GoogleMapProps) => {
   console.log("rendred", locations);
 
   if (loadError) {
-    return <div>Error loading Google Maps: {loadError.message}</div>;
+    console.error("Error loading Google Maps: :", loadError.message);
+    toast.warning("Failed to load google map.");
   }
 
   if (!isLoaded) {

@@ -24,7 +24,7 @@ const Carouseltem = ({ item }: { item: ItemProps }) => {
   const isMedium = useIsMedium();
   return (
     <Paper className={`relative ${isSmall ? "h-[50vh]" : "h-[54vh]"}`}>
-      <Image src={item.img} fill sizes="auto" className="object-cover w-full" alt={item.alt} />
+      <Image src={item.img} fill sizes="auto" className="object-cover w-full" alt={item.alt} priority={true} />
       <Typography
         variant="h1"
         className={`absolute ${isSmall ? "top-5 left-5" : "top-10 left-10"} ${font.className} text-orange-400 ${

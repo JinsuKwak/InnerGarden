@@ -1,6 +1,6 @@
 import React from "react";
 import { RESOURCE_TOPICS } from "@/app/constants";
-import InnerGardenResourcesImg from "@/../public/InnerGarden-Main-3.jpeg";
+import InnerGardenResourcesImg from "@/../public/InnerGarden-Main-3.jpg";
 import Image from "next/image";
 import SideNavPageContainer from "@/components/bases/SideNavPageContainer";
 
@@ -18,7 +18,7 @@ const EmployeeWelfare = () => {
         </div>
         <div className="w-[70%] pb-[2rem]">
           <div className={`relative overflow-hidden rounded-lg aspect-[14/10] filter saturate-75`}>
-            <Image src={InnerGardenResourcesImg} sizes="auto" fill alt="" />
+            <Image src={InnerGardenResourcesImg} sizes="auto" fill alt="" priority={true} />
           </div>
         </div>
         <div className="text-lg font-semibold pb-[2rem]">

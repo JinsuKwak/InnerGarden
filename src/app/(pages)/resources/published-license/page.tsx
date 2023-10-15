@@ -1,6 +1,6 @@
 import React from "react";
 import { RESOURCE_TOPICS } from "@/app/constants";
-import InnerGardenResourcesImg from "@/../public/InnerGarden-License.jpeg";
+import InnerGardenResourcesImg from "@/../public/InnerGarden-License.jpg";
 import Image from "next/image";
 import SideNavPageContainer from "@/components/bases/SideNavPageContainer";
 import Link from "next/link";
@@ -16,7 +16,7 @@ const PublishedLicense = () => {
         </div>
         <div className="w-[70%] pb-[2rem] flex flex-col">
           <div className={`relative overflow-hidden rounded-lg aspect-[14/10] filter saturate-75`}>
-            <Image src={InnerGardenResourcesImg} sizes="auto" fill alt="" />
+            <Image src={InnerGardenResourcesImg} sizes="auto" fill alt="" priority={true} />
           </div>
           <div className="text-[#333] text-sm font-normal italic pt-[1rem]">
             <span>{"Issued by Government of Alberta"}</span>

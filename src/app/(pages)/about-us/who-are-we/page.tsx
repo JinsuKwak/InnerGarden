@@ -1,6 +1,6 @@
 import React from "react";
 import { ABOUT_US_TOPICS } from "@/app/constants";
-import InnerGardenAboutUsImg from "@/../public/InnerGarden-AboutUs-1.jpeg";
+import InnerGardenAboutUsImg from "@/../public/InnerGarden-AboutUs-1.jpg";
 import Image from "next/image";
 import SideNavPageContainer from "@/components/bases/SideNavPageContainer";
 
@@ -8,7 +8,7 @@ const WhoAreWe = () => {
   return (
     <SideNavPageContainer title={"About Us"} sideTopics={ABOUT_US_TOPICS}>
       <div className={`relative w-[100%] h-[9rem] overflow-hidden filter saturate-75`}>
-        <Image fill style={{ objectFit: "cover" }} src={InnerGardenAboutUsImg} alt="" sizes="auto" />
+        <Image fill style={{ objectFit: "cover" }} src={InnerGardenAboutUsImg} alt="" sizes="auto" priority={true} />
       </div>
       <div className="p-[2rem] flex flex-col">
         <div className="text-xl font-[500] pb-[2rem]">

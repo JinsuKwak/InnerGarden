@@ -1,6 +1,6 @@
 import React from "react";
 import { CONTACT_TOPICS } from "@/app/constants";
-import InnerGardenAboutUsImg from "@/../public/InnerGarden-AboutUs-3.jpeg";
+import InnerGardenAboutUsImg from "@/../public/InnerGarden-AboutUs-3.jpg";
 import Image from "next/image";
 import SideNavPageContainer from "@/components/bases/SideNavPageContainer";
 import ButtonLink from "@/components/buttons/ButtonLink";
@@ -9,7 +9,7 @@ const Contact = () => {
   return (
     <SideNavPageContainer title={"Contact"} sideTopics={CONTACT_TOPICS}>
       <div className={`relative w-[100%] h-[11rem] overflow-hidden filter saturate-75`}>
-        <Image fill style={{ objectFit: "cover" }} src={InnerGardenAboutUsImg} alt="" sizes="auto" />
+        <Image fill style={{ objectFit: "cover" }} src={InnerGardenAboutUsImg} alt="" sizes="auto" priority={true} />
       </div>
       <div className="p-[2rem] flex flex-col h-[100%]">
         <div className="flex flex-col h-[100%] justify-between">

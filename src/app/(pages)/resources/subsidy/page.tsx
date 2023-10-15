@@ -25,7 +25,7 @@ const Subsidy = () => {
   return (
     <SideNavPageContainer title={"Resources"} sideTopics={RESOURCE_TOPICS}>
       <div className={`relative w-[100%] h-[10rem] overflow-hidden filter saturate-75`}>
-        <Image fill style={{ objectFit: "cover" }} src={InnerGardenResourcesImg} alt="" sizes="auto" />
+        <Image fill style={{ objectFit: "cover" }} src={InnerGardenResourcesImg} alt="" sizes="auto" priority={true} />
       </div>
       <div className="py-[2rem] px-[2rem] flex flex-col pb-[3rem]">
         <div className="flex flex-col pb-[3rem]">

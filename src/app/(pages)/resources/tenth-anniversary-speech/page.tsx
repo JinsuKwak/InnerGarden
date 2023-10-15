@@ -1,6 +1,6 @@
 import React from "react";
 import { RESOURCE_TOPICS } from "@/app/constants";
-import InnerGardenResourcesImg from "@/../public/InnerGarden-Resources-1.jpeg";
+import InnerGardenResourcesImg from "@/../public/InnerGarden-Resources-1.jpg";
 import Image from "next/image";
 import SideNavPageContainer from "@/components/bases/SideNavPageContainer";
 
@@ -8,7 +8,7 @@ const TenthAnniversarySpeech = () => {
   return (
     <SideNavPageContainer title={"Resources"} sideTopics={RESOURCE_TOPICS}>
       <div className={`relative w-[100%] h-[10rem] overflow-hidden filter saturate-75`}>
-        <Image fill style={{ objectFit: "cover" }} src={InnerGardenResourcesImg} alt="" sizes="auto" />
+        <Image fill style={{ objectFit: "cover" }} src={InnerGardenResourcesImg} alt="" sizes="auto" priority={true} />
       </div>
       <div className="py-[2rem] px-[2rem] flex flex-col">
         <div className="flex flex-col pb-[2rem]">

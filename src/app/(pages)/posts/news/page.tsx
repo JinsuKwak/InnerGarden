@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { POST_TOPICS } from "@/app/constants";
-import InnerGardenAboutUsImg from "@/../public/InnerGarden-AboutUs-1.jpeg";
+import InnerGardenAboutUsImg from "@/../public/InnerGarden-AboutUs-1.jpg";
 import Image from "next/image";
 import SideNavPageContainer from "@/components/bases/SideNavPageContainer";
 import PostPreviewContainer from "@/components/posts/PostPreviewContainer";
@@ -12,7 +12,7 @@ const News = () => {
   return (
     <SideNavPageContainer title={"Posts"} sideTopics={POST_TOPICS}>
       <div className={`relative w-[100%] h-[9rem] overflow-hidden filter saturate-75`}>
-        <Image fill style={{ objectFit: "cover" }} src={InnerGardenAboutUsImg} alt="" sizes="auto" />
+        <Image fill style={{ objectFit: "cover" }} src={InnerGardenAboutUsImg} alt="" sizes="auto" priority={true} />
       </div>
       <div className="p-[2rem] flex flex-col">
         <div className="font-semibold text-[1em] w-full hover:underline pb-[0.6rem]">

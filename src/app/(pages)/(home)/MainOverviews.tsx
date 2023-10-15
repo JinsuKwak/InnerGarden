@@ -1,11 +1,11 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import InnerGardenMainImg1 from "@/../public/InnerGarden-Main-1.jpeg";
+import InnerGardenMainImg1 from "@/../public/InnerGarden-Main-1.jpg";
 import InnerGardenMainImg2 from "@/../public/InnerGarden-Main-2.jpg";
-import InnerGardenMainImg3 from "@/../public/InnerGarden-Main-3.jpeg";
-import InnerGardenMainImg4 from "@/../public/InnerGarden-Main-4.jpeg";
-import InnerGardenMainImg5 from "@/../public/InnerGarden-Main-5.jpeg";
+import InnerGardenMainImg3 from "@/../public/InnerGarden-Main-3.jpg";
+import InnerGardenMainImg4 from "@/../public/InnerGarden-Main-4.jpg";
+import InnerGardenMainImg5 from "@/../public/InnerGarden-Main-5.jpg";
 import InnerGardenMainImg6_1 from "@/../public/InnerGarden-Main-6-1.jpeg";
 import InnerGardenMainImg6_2 from "@/../public/InnerGarden-Main-6-2.jpeg";
 import { Divider } from "@mui/material";
@@ -31,7 +31,7 @@ const MainOverviews = () => {
           <div
             className={`relative ${
               isSmall ? "w-[100%]" : "w-[55%]"
-            } overflow-hidden rounded-lg aspect-[16/10] mr-[2rem] filter saturate-75`}
+            } overflow-hidden rounded-lg aspect-[16/10] mr-[2rem]`}
           >
             <Image
               src={InnerGardenMainImg1}
@@ -108,7 +108,7 @@ const MainOverviews = () => {
                 <div
                   className={`relative ${
                     isSmall ? "w-[100%]" : "w-[55%]"
-                  } overflow-hidden rounded-lg aspect-[16/10] filter saturate-75 mt-[2rem]`}
+                  } overflow-hidden rounded-lg aspect-[16/10] mt-[2rem]`}
                 >
                   <Image src={InnerGardenMainImg2} sizes="auto" fill alt="Canadian Flag" />
                   <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-neutral-600 to-neutral-600 opacity-40" />
@@ -144,11 +144,7 @@ const MainOverviews = () => {
           {/* {############### TEXT ##############} */}
           {/* {############### IMAGE-BASE ##############} */}
           {!isSmall && (
-            <div
-              className={`relative ${
-                isSmall ? "w-[100%]" : "w-[55%]"
-              } overflow-hidden rounded-lg aspect-[16/10] filter saturate-75`}
-            >
+            <div className={`relative ${isSmall ? "w-[100%]" : "w-[55%]"} overflow-hidden rounded-lg aspect-[16/10]`}>
               <Image src={InnerGardenMainImg2} sizes="auto" fill alt="Canadian Flag" />
               <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-neutral-600 to-neutral-600 opacity-40" />
             </div>
@@ -162,7 +158,7 @@ const MainOverviews = () => {
           <div
             className={`relative ${
               isSmall ? "w-[100%]" : "w-[55%]"
-            } overflow-hidden rounded-lg aspect-[16/10] mr-[2rem] filter saturate-75`}
+            } overflow-hidden rounded-lg aspect-[16/10] mr-[2rem] `}
           >
             <Image
               src={InnerGardenMainImg3}
@@ -227,7 +223,7 @@ const MainOverviews = () => {
                 <div
                   className={`relative ${
                     isSmall ? "w-[100%]" : "w-[55%]"
-                  } overflow-hidden rounded-lg aspect-[16/10] filter saturate-75 mt-[2rem]`}
+                  } overflow-hidden rounded-lg aspect-[16/10] filter mt-[2rem]`}
                 >
                   <Image src={InnerGardenMainImg4} sizes="auto" fill alt="Paper with colorful crayons" />
                   <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-neutral-600 to-neutral-600 opacity-40" />
@@ -258,11 +254,7 @@ const MainOverviews = () => {
           {/* {############### TEXT ##############} */}
           {/* {############### IMAGE-BASE ##############} */}
           {!isSmall && (
-            <div
-              className={`relative ${
-                isSmall ? "w-[100%]" : "w-[55%]"
-              } overflow-hidden rounded-lg aspect-[16/10] filter saturate-75`}
-            >
+            <div className={`relative ${isSmall ? "w-[100%]" : "w-[55%]"} overflow-hidden rounded-lg aspect-[16/10] `}>
               <Image src={InnerGardenMainImg4} sizes="auto" fill alt="Paper with colorful crayons" />
               <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-neutral-600 to-neutral-600 opacity-40" />
             </div>
@@ -281,7 +273,7 @@ const MainOverviews = () => {
           <div
             className={`relative ${
               isSmall ? "w-[100%]" : "w-[55%]"
-            } overflow-hidden rounded-lg aspect-[16/10] mr-[2rem] filter saturate-75`}
+            } overflow-hidden rounded-lg aspect-[16/10] mr-[2rem] `}
           >
             <Image src={InnerGardenMainImg5} sizes="auto" fill alt="Picture of Inner Garden Education Classroom" />
             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-neutral-600 to-neutral-600 opacity-40" />
@@ -329,11 +321,7 @@ const MainOverviews = () => {
         {/* {############### ONE ##############} */}
         <div className={`w-full flex justify-between items-center flex-col ${isSmall ? "" : ""}`}>
           <div className="flex flex-col items-center">
-            <div
-              className={`relative ${
-                isSmall ? "w-[100%]" : "w-[70%]"
-              } overflow-hidden rounded-lg aspect-[16/10] filter saturate-75`}
-            >
+            <div className={`relative ${isSmall ? "w-[100%]" : "w-[70%]"} overflow-hidden rounded-lg aspect-[16/10] `}>
               <Image
                 src={InnerGardenMainImg6_1}
                 sizes="auto"
@@ -368,11 +356,7 @@ const MainOverviews = () => {
         {/* {############### TWO ##############} */}
         <div className={`w-full flex justify-between items-center flex-col ${isSmall ? "pt-[4rem]" : ""}`}>
           <div className="flex flex-col items-center">
-            <div
-              className={`relative ${
-                isSmall ? "w-[100%]" : "w-[70%]"
-              } overflow-hidden rounded-lg aspect-[16/10] filter saturate-75`}
-            >
+            <div className={`relative ${isSmall ? "w-[100%]" : "w-[70%]"} overflow-hidden rounded-lg aspect-[16/10] `}>
               <Image
                 src={InnerGardenMainImg6_2}
                 sizes="auto"
