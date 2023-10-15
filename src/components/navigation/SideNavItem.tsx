@@ -19,7 +19,7 @@ const SideNavItem = ({ label, href, width }: SideNavbarItemProps) => {
         <div
           className={`flex items-center border-b-[2px] cursor-pointer ${width} h-[3rem] text-lg px-4 py-1 transition ${
             isActive
-              ? "border-orange-300 font-semibold bg-gradient-to-r from-orange-200 via-orange-100 to-white"
+              ? "border-orange-300 font-semibold bg-gradient-to-r from-orange-200 via-orange-100 to-transparent"
               : "border-orange-200"
           } ${isActive ? "opacity-90" : "opacity-60"} transition ease-[in] duration-700 hover:opacity-90
       `}

@@ -14,7 +14,7 @@ const LanguageBar = () => {
   };
 
   return (
-    <div className="w-[100%] h-[3rem] bg-white flex items-center justify-end">
+    <div className="w-[100%] h-[3rem] bg-transparent flex items-center justify-end">
       <div className="flex justify-end h-fit items-center text-center align-middle text-sm">
         <LanguageButton code={SUPPORTED_LANGUAGE.primary.code} onClick={onClickHandler} isActive={primary} />
         <div>{"|"}</div>

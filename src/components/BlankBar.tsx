@@ -6,7 +6,7 @@ interface BlankBarProps {
   height?: string;
 }
 const BlankBar = ({ color, height }: BlankBarProps) => {
-  return <Box className={`w-full ${color ? color : "bg-white"}  ${height ? height : "h-[3rem]"}`}></Box>;
+  return <Box className={`w-full ${color ? color : "bg-transparent"}  ${height ? height : "h-[3rem]"}`}></Box>;
 };
 
 export default BlankBar;

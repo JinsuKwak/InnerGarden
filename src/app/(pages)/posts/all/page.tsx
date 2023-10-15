@@ -17,16 +17,16 @@ const AllPosts = () => {
       <div className="flex flex-col">
         <div className="p-[2rem] flex flex-col">
           <div className="font-semibold text-[1em] w-full hover:underline pb-[0.6rem]">
-            <Link href="/posts/announcements">
+            <Link href="/posts/all">
               <span>{`All Posts`}</span>
             </Link>
           </div>
-          <div className="pb-[4rem">
+          <div className="pb-[4rem]">
             <PostPreviewContainer
               isMainPage={false}
-              sections={["announcement", "news"]}
+              sections={["announcement", "news", "faq"]}
               postsPerPage={PREVEIW_NUM_PAGE}
-              isVeiwOnlyPage={false}
+              isVeiwOnlyPage={true}
               showBlank={true}
               displaySections={true}
             />

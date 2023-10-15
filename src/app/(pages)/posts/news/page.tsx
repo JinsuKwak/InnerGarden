@@ -14,21 +14,23 @@ const News = () => {
       <div className={`relative w-[100%] h-[9rem] overflow-hidden filter saturate-75`}>
         <Image fill style={{ objectFit: "cover" }} src={InnerGardenAboutUsImg} alt="" sizes="auto" priority={true} />
       </div>
-      <div className="p-[2rem] flex flex-col">
-        <div className="font-semibold text-[1em] w-full hover:underline pb-[0.6rem]">
-          <Link href="/posts/announcements">
-            <span>{`News`}</span>
-          </Link>
-        </div>
-        <div className="pb-[4rem">
-          <PostPreviewContainer
-            isMainPage={false}
-            sections={["news"]}
-            postsPerPage={15}
-            isVeiwOnlyPage={true}
-            showBlank={true}
-            displaySections={false}
-          />
+      <div className="flex flex-col">
+        <div className="p-[2rem] flex flex-col">
+          <div className="font-semibold text-[1em] w-full hover:underline pb-[0.6rem]">
+            <Link href="/posts/news">
+              <span>{`News`}</span>
+            </Link>
+          </div>
+          <div className="pb-[4rem]">
+            <PostPreviewContainer
+              isMainPage={false}
+              sections={["news"]}
+              postsPerPage={PREVEIW_NUM_PAGE}
+              isVeiwOnlyPage={true}
+              showBlank={true}
+              displaySections={true}
+            />
+          </div>
         </div>
       </div>
     </SideNavPageContainer>

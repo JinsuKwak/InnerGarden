@@ -11,7 +11,7 @@ export const SUPPORTED_LANGUAGE = {
   },
 };
 export const PREVEIW_NUM_MAIN = 5;
-export const PREVEIW_NUM_PAGE = 20;
+export const PREVEIW_NUM_PAGE = 12;
 
 export const ABOUT_US_TOPICS = [
   { label: "Who Are We?", href: "/about-us/who-are-we" },
@@ -48,6 +48,7 @@ export const POST_TOPICS = [
   { label: "All Posts", href: "/posts/all" },
   { label: "Announcements", href: "/posts/announcement" },
   { label: "News", href: "/posts/news" },
+  { label: "FAQ", href: "/posts/faq" },
 ];
 
 export const LOCATIONS_KEY = "all_locations";

@@ -33,11 +33,11 @@ const initialPageForm = [
   {
     text: "RESOURCES",
     subPages: [
-      { text: "FAQ", route: "/post/faq" },
+      { text: "FAQ", route: "/posts/faq" },
       { text: "MORE", route: RESOURCE_TOPICS[0].href },
     ],
   },
-  { text: "LASTEST POSTS", route: "/posts" },
+  { text: "LASTEST POSTS", route: "/posts/all" },
   { text: "EMPLOYEE WELLFARE", route: RESOURCE_TOPICS[2].href },
   { text: "CONTACT", route: "/contact" },
 ];

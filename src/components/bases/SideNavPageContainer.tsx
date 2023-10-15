@@ -23,7 +23,7 @@ const SideNavPageContainer = ({ children, title, sideTopics }: SideNavContainerP
         <div
           className={`flex ${
             isSmall ? "flex-col justify-center items-center" : "justify-between"
-          }  pt-[3rem] pb-[5rem]`}
+          }  pt-[1rem] pb-[5rem]`}
         >
           <div className="flex flex-col justify-start">
             <div className={`font-semibold text-4xl ${isSmall ? "pb-[2rem]" : ""}`}>
@@ -37,7 +37,7 @@ const SideNavPageContainer = ({ children, title, sideTopics }: SideNavContainerP
           </div>
           <div
             className={` ${
-              isSmall ? "" : "ml-[4rem]"
+              isSmall ? "" : "ml-[2rem]"
             } rounded-lg overflow-hidden w-[100%] max-w-[1200px] min-h-[40rem]  shadow-md  flex flex-col`}
           >
             {children}

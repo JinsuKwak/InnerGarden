@@ -8,7 +8,7 @@ interface ContainerProps {
   color?: string;
 }
 
-const Container = ({ children, color = "#fff" }: ContainerProps) => {
+const Container = ({ children, color = "transparent" }: ContainerProps) => {
   const isSmall = useIsSmall();
   return (
     <React.Fragment>
