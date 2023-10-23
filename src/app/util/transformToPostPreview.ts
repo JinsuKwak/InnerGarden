@@ -14,6 +14,7 @@ const transformToPostPreview = (data: unknown): PostPreview[] => {
       section: item.section || "",
       userRole: item.userRole || "",
       userID: item.userID || "",
+      userEmail: item.userEmail || "",
       userFirstName: item.userFirstName || "",
       userLastName: item.userLastName || "",
       isImportant: item.isImportant || false,

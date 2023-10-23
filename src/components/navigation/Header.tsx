@@ -11,8 +11,9 @@ import { colors } from "@/app/colors";
 import Image from "next/image";
 import logoImage from "@/../public/InnerGarden-Nav.png";
 import NavItems from "./NavItems";
-import { RESPONSIVE_SMALL } from "@/app/constants";
-import { RESOURCE_TOPICS } from "@/app/constants";
+import { RESPONSIVE_SMALL } from "@/constants";
+import { RESOURCE_TOPICS } from "@/constants";
+import LanguageBar from "../languages/LanguageBar";
 
 const initialPageForm = [
   {
@@ -57,7 +58,7 @@ const Header = () => {
 
   return (
     <React.Fragment>
-      <AppBar sx={{ background: "white" }} elevation={1}>
+      <AppBar sx={{ background: colors.background }} elevation={1}>
         <Toolbar className="flex">
           <div className=" relative flex items-center text-2xl md:h-14 md:w-14 h-12 w-12">
             <Link href="/" className="w-full h-full">

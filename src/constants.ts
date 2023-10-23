@@ -51,4 +51,38 @@ export const POST_TOPICS = [
   { label: "FAQ", href: "/posts/faq" },
 ];
 
+export const MEMBER_TOPICS = [
+  [{ label: "Log In Required", href: "/" }],
+  [
+    { label: "Inner Garden", href: "/member/home" },
+    { label: "Write a Post", href: "/member/posts/write-post" },
+    { label: "Edit Posts", href: "/member/posts/all" },
+    { label: "My Account", href: "/member/account" },
+  ],
+  [
+    { label: "Inner Garden", href: "/member/home" },
+    { label: "Write a Post", href: "/member/posts/write-post" },
+    { label: "Edit Posts", href: "/member/posts/all" },
+    { label: "Veiw Passcord", href: "/member/passcord/view" },
+    { label: "My Account", href: "/member/account" },
+  ],
+  [
+    { label: "Inner Garden", href: "/member/home" },
+    { label: "Write a Post", href: "/member/posts/write-post" },
+    { label: "Edit Posts", href: "/member/posts/all" },
+    { label: "Manage Users", href: "/member/users/all" },
+    { label: "Set Passcord", href: "/member/passcord/set" },
+    { label: "My Account", href: "/member/account" },
+  ],
+];
+
+export const MEMBER_POST_TOPICS = [
+  { label: "Member Home", href: "/member/home" },
+  { label: "Write a Post", href: "/member/posts/write-post" },
+  { label: "All Posts", href: "/member/posts/all" },
+  { label: "Announcements", href: "/member/posts/announcement" },
+  { label: "News", href: "/member/posts/news" },
+  { label: "FAQ", href: "/member/posts/faq" },
+];
+
 export const LOCATIONS_KEY = "all_locations";

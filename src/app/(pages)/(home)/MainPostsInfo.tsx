@@ -7,7 +7,7 @@ import Link from "next/link";
 import { Divider } from "@mui/material";
 import Box from "@mui/material/Box";
 import { useState } from "react";
-import { PREVEIW_NUM_MAIN } from "@/app/constants";
+import { PREVEIW_NUM_MAIN } from "@/constants";
 
 const MainPostsInfo = () => {
   const isSmall = useIsSmall();

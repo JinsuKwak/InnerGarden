@@ -209,6 +209,7 @@ import { styled } from "@mui/material/styles";
 import { FaTrashCan, FaRegFileLines } from "react-icons/fa6";
 import useIsMedium from "@/app/hooks/useIsMedium";
 import { formatTime } from "@//helpers/dayJS";
+import getCurrentUser from "@/app/actions/getCurrentUser";
 
 interface PostLinkProps {
   postPreview: PostPreview | null;
@@ -217,18 +218,10 @@ interface PostLinkProps {
   displaySections: boolean;
 }
 
-interface TempUser {
-  userID: string;
-  userRole: number;
-}
-
 const PostLinkProps = ({ postPreview, isVeiwOnlyPage, isMainPage, displaySections }: PostLinkProps) => {
   const isSmall = useIsSmall();
   const isMedium = useIsMedium();
-  const currentUser: TempUser = {
-    userID: "4jnsu_ID",
-    userRole: 2,
-  };
+  const currentUser = getCurrentUser();
 
   const displaySection = (section: string): string => {
     switch (section) {
@@ -245,7 +238,7 @@ const PostLinkProps = ({ postPreview, isVeiwOnlyPage, isMainPage, displaySection
 
   const isEditable = (): boolean => {
     if (currentUser && postPreview) {
-      if (postPreview.userID === currentUser.userID) {
+      if (postPreview.userEmail === currentUser.userEmail) {
         return true;
       }
       if (currentUser.userRole > postPreview.userRole) {

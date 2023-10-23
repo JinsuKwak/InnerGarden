@@ -1,6 +1,6 @@
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { RESPONSIVE_SMALL } from "@/app/constants";
+import { RESPONSIVE_SMALL } from "@/constants";
 
 const useIsSmall = () => {
   const theme = useTheme();

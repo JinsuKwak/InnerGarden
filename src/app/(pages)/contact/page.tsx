@@ -1,5 +1,5 @@
 import React from "react";
-import { CONTACT_TOPICS } from "@/app/constants";
+import { CONTACT_TOPICS } from "@/constants";
 import InnerGardenAboutUsImg from "@/../public/InnerGarden-AboutUs-3.jpg";
 import Image from "next/image";
 import SideNavPageContainer from "@/components/bases/SideNavPageContainer";
@@ -16,7 +16,7 @@ const Contact = () => {
           <div className="flex flex-col">
             <div className="flex flex-col pb-[2rem]">
               <div className="text-xl font-bold pb-[2rem]">
-                <span>{"Front Dest:"}</span>
+                <span>{"Front Desk:"}</span>
               </div>
               <div className="text-base font-normal pb-[1rem]">
                 <span className="pl-[1rem]">

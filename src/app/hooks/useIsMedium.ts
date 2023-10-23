@@ -1,6 +1,6 @@
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { RESPONSIVE_MEDIUM } from "@/app/constants";
+import { RESPONSIVE_MEDIUM } from "@/constants";
 
 const useIsMedium = () => {
   const theme = useTheme();

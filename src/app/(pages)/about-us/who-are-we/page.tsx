@@ -1,5 +1,5 @@
 import React from "react";
-import { ABOUT_US_TOPICS } from "@/app/constants";
+import { ABOUT_US_TOPICS } from "@/constants";
 import InnerGardenAboutUsImg from "@/../public/InnerGarden-AboutUs-1.jpg";
 import Image from "next/image";
 import SideNavPageContainer from "@/components/bases/SideNavPageContainer";

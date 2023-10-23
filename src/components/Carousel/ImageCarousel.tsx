@@ -9,7 +9,7 @@ import ButtonLink from "../buttons/ButtonLink";
 
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { RESPONSIVE_SMALL } from "@/app/constants";
+import { RESPONSIVE_SMALL } from "@/constants";
 
 const items = [
   {

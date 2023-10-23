@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { LOCATION_TOPICS } from "@/app/constants";
+import { LOCATION_TOPICS } from "@/constants";
 import InnerGardenAboutUsImg from "@/../public/InnerGarden-AboutUs-1.jpg";
 import Image from "next/image";
 import SideNavPageContainer from "@/components/bases/SideNavPageContainer";

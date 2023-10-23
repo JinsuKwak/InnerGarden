@@ -3,6 +3,7 @@ export interface Post {
   section: string;
   userRole: number;
   userID: string;
+  userEmail: string;
   userFirstName: string;
   userLastName: string;
   content?: string;

@@ -1,6 +1,6 @@
 import { ALLLOCATIONS } from "../../stubData/locationData";
 import { Location } from "@/types/Location";
-import { LOCATIONS_KEY } from "../constants";
+import { LOCATIONS_KEY } from "../../constants";
 
 export default async function fetchLocations() {
   return new Promise((resolve) => {

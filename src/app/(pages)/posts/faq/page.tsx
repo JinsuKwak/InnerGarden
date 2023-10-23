@@ -1,11 +1,11 @@
 "use client";
 import React from "react";
-import { POST_TOPICS } from "@/app/constants";
+import { POST_TOPICS } from "@/constants";
 import InnerGardenAboutUsImg from "@/../public/InnerGarden-AboutUs-1.jpg";
 import Image from "next/image";
 import SideNavPageContainer from "@/components/bases/SideNavPageContainer";
 import PostPreviewContainer from "@/components/posts/PostPreviewContainer";
-import { PREVEIW_NUM_PAGE } from "@/app/constants";
+import { PREVEIW_NUM_PAGE } from "@/constants";
 import Link from "next/link";
 
 const FAQ = () => {

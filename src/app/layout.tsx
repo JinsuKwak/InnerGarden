@@ -6,6 +6,9 @@ import { CssBaseline } from "@mui/material";
 import ToastProvider from "@/components/ToastProvider";
 import Footer from "@/components/Footer";
 import Head from "next/head";
+import getCurrentUser from "./actions/getCurrentUser";
+import CurrentUserBar from "@/components/user/CurrentUserBar";
+import { User } from "@/types/User";
 import favicon from "../../public/favicon.ico";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -17,6 +20,7 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const currentUser = getCurrentUser();
   return (
     <html lang="en" style={{ height: "100%" }}>
       <Head>
@@ -25,6 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`${inter.className} flex flex-col min-h-screen`}>
         <CssBaseline />
         <Header />
+        {/* <CurrentUserBar currentUser={currentUser as User} /> */}
         <ToastProvider />
         <div className="flex-grow">{children}</div>
         <Footer />

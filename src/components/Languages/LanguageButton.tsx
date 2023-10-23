@@ -1,8 +1,8 @@
 import React from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
-import { SUPPORTED_LANGUAGE } from "@/app/constants";
-import { RESPONSIVE_SMALL } from "@/app/constants";
+import { SUPPORTED_LANGUAGE } from "@/constants";
+import { RESPONSIVE_SMALL } from "@/constants";
 
 interface LanguageButtonProps {
   code: string;

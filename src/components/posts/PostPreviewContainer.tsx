@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import getPosts from "@/app/actions/getPostPreviews";
 import PostLink from "./PostLink";
-import { PREVEIW_NUM_MAIN } from "@/app/constants";
+import { PREVEIW_NUM_MAIN } from "@/constants";
 import performSortPosts from "@/app/util/performSortPosts";
 import { PostPreview } from "@/types/PostPreview";
 import { toast } from "react-toastify";

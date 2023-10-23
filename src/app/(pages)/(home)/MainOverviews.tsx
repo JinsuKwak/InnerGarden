@@ -15,7 +15,7 @@ import ButtonLink from "@/components/buttons/ButtonLink";
 import ButtonLinkOutline from "@/components/buttons/ButtonLinkOutline";
 import { IoCheckmarkSharp, IoDiamondOutline, IoNutritionOutline } from "react-icons/io5";
 import MainSummary from "./MainSummary";
-import { RESOURCE_TOPICS } from "@/app/constants";
+import { RESOURCE_TOPICS } from "@/constants";
 
 const MainOverviews = () => {
   const isSmall = useIsSmall();

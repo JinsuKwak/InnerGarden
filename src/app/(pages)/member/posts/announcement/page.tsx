@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { POST_TOPICS } from "@/constants";
+import { MEMBER_POST_TOPICS } from "@/constants";
 import InnerGardenAboutUsImg from "@/../public/InnerGarden-AboutUs-1.jpg";
 import Image from "next/image";
 import SideNavPageContainer from "@/components/bases/SideNavPageContainer";
@@ -10,7 +10,7 @@ import Link from "next/link";
 
 const Announcements = () => {
   return (
-    <SideNavPageContainer title={"Posts"} sideTopics={POST_TOPICS}>
+    <SideNavPageContainer title={"Posts"} sideTopics={MEMBER_POST_TOPICS}>
       <div className={`relative w-[100%] h-[9rem] overflow-hidden filter saturate-75`}>
         <Image fill style={{ objectFit: "cover" }} src={InnerGardenAboutUsImg} alt="" sizes="auto" priority={true} />
       </div>
@@ -26,7 +26,7 @@ const Announcements = () => {
               isMainPage={false}
               sections={["announcement"]}
               postsPerPage={PREVEIW_NUM_PAGE}
-              isVeiwOnlyPage={true}
+              isVeiwOnlyPage={false}
               showBlank={true}
               displaySections={true}
             />

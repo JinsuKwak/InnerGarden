@@ -1,5 +1,5 @@
 import React from "react";
-import { JOIN_US_TOPICS } from "@/app/constants";
+import { JOIN_US_TOPICS } from "@/constants";
 import InnerGardenAboutUsImg from "@/../public/InnerGarden-AboutUs-5.jpg";
 import Image from "next/image";
 import SideNavPageContainer from "@/components/bases/SideNavPageContainer";
@@ -39,6 +39,14 @@ const JoinAsEducator = () => {
               </span>
               <span className="font-normal pl-[1rem] pb-[0.5rem]">{`- Existing dayhome with children is prioritized.`}</span>
               <span className="font-normal pl-[1rem] pb-[0.5rem]">{`- Complete the following application to proceed:`}</span>
+            </div>
+            <div className="flex flex-col text-base pb-[2rem]">
+              <span className="font-normal pb-[0.5rem]">
+                {`Already a member? `}
+                <Link href={"/auth/sign-in"}>
+                  <span className="text-orange-400 underline">{`Sign In`}</span>
+                </Link>
+              </span>
             </div>
           </div>
           <div className="w-[24rem] flex justify-center">
