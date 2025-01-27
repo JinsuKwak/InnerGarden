@@ -2,7 +2,7 @@
 import React from "react";
 import { useState } from "react";
 import { SUPPORTED_LANGUAGE } from "@/constants";
-import LanguageButton from "./LanguageButton";
+import LanguageButton from "@/components/Languages/LanguageButton";
 import { useTheme } from "@mui/material/styles";
 
 const LanguageBar = () => {

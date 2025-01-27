@@ -1,38 +1,26 @@
-// import { getServerSession } from "next-auth";
-// import { authOptions } from "@/pages/api/auth/[...nextauth]";
+import axios from 'axios';
+import getToken from '@/app/util/getToken';
+import removeToken from '@/app/util/removeToken';
+import { User } from '@/types/User';
 
-// export async function getSession() {
-//   return await getServerSession(authOptions);
-// }
+const INNERGARDEN_API = process.env.NEXT_PUBLIC_INNERGARDEN_API;
 
-export default function getCurrentUser() {
-  //   try {
-  //     const session = await getSession();
+export const getCurrentUser = async (): Promise<User | null> => {
+  const token = getToken();
+  if (!token) {
+    return null;
+  }
 
-  //     if (!session?.user?.email) {
-  //       return null;
-  //     }
+  try {
+    const response = await axios.post(`${INNERGARDEN_API}/validate-token`, {
+      token: token,
+    });
+    return response.data as User; // Return the user data
+  } catch (error) {
+    console.error('Failed to validate token:', error);
+    removeToken(); // Remove invalid token
+    return null;
+  }
+};
 
-  //     const currentUser = await prisma?.user.findUnique({
-  //       where: {
-  //         email: session.user.email,
-  //       },
-  //     });
-
-  //     if (!currentUser) {
-  //       return null;
-  //     }
-
-  //     return currentUser;
-  //   } catch (error) {
-  //     return null;
-  //   }
-  return {
-    userID: 324325143,
-    userEmail: "rootAdmin@InnerGarden.ca",
-    userHashedPassward: "aawef1rfawef",
-    userRole: 3,
-    userFName: "Jinsu",
-    userLName: "kwak",
-  };
-}
+export default getCurrentUser;

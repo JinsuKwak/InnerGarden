@@ -8,7 +8,7 @@ import PostPreviewContainer from '@/components/posts/PostPreviewContainer';
 import { PREVEIW_NUM_PAGE } from '@/constants';
 import Link from 'next/link';
 
-const Announcements = () => {
+const create = () => {
   return (
     <SideNavPageContainer title={'Posts'} sideTopics={MEMBER_POST_TOPICS}>
       <div
@@ -26,14 +26,14 @@ const Announcements = () => {
       <div className='flex flex-col'>
         <div className='p-[2rem] flex flex-col'>
           <div className='font-semibold text-[1em] w-full hover:underline pb-[0.6rem]'>
-            <Link href='/posts/announcement'>
-              <span>{`Announcements`}</span>
+            <Link href='/posts/faq'>
+              <span>{`Frequently Asked Questions`}</span>
             </Link>
           </div>
           <div className='pb-[4rem]'>
             <PostPreviewContainer
               isMainPage={false}
-              sections={['announcement']}
+              sections={['faq']}
               postsPerPage={PREVEIW_NUM_PAGE}
               isVeiwOnlyPage={false}
               showBlank={true}
@@ -46,4 +46,4 @@ const Announcements = () => {
   );
 };
 
-export default Announcements;
+export default create;

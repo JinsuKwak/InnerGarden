@@ -17,10 +17,10 @@ const CurrentUserBar = ({ currentUser }: CurrentUserBarProps) => {
               <span>{`Welcome!`}</span>
             </div>
             <div className="pr-[0.4rem]">
-              <span className="capitalize">{currentUser.userFName}</span>
+              <span className="capitalize">{currentUser.userFirstName}</span>
             </div>
             <div className="">
-              <span className="capitalize">{currentUser.userLName}</span>
+              <span className="capitalize">{currentUser.userLastName}</span>
             </div>
           </div>
           <div className="flex justify-center items-center">

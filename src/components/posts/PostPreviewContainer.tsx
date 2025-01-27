@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from "react";
-import getPosts from "@/app/actions/getPostPreviews";
-import PostLink from "./PostLink";
-import { PREVEIW_NUM_MAIN } from "@/constants";
-import performSortPosts from "@/app/util/performSortPosts";
-import { PostPreview } from "@/types/PostPreview";
-import { toast } from "react-toastify";
-import transformToPostPreview from "@/app/util/transformToPostPreview";
-import { Button } from "@mui/material";
-import PostTopbar from "./PostTopbar";
-import PostPagination from "./PostPagination";
+'use client';
+import React, { useEffect, useState } from 'react';
+import getPosts from '@/app/actions/getPostPreviews';
+import PostLink from './PostLink';
+import { PREVEIW_NUM_MAIN } from '@/constants';
+import performSortPosts from '@/app/util/performSortPosts';
+import { PostPreview } from '@/types/PostPreview';
+import { toast } from 'react-toastify';
+import transformToPostPreview from '@/app/util/transformToPostPreview';
+import { User } from '@/types/User';
+import getCurrentUser from '@/app/actions/getCurrentUser';
+import PostTopbar from './PostTopbar';
+import PostPagination from './PostPagination';
 
 interface PostPreviewContainerProps {
   isMainPage: boolean;
@@ -20,111 +22,6 @@ interface PostPreviewContainerProps {
   sort?: string;
 }
 
-// const PostPreviewContainer = ({
-//   isMainPage,
-//   sections,
-//   postsPerPage,
-//   isVeiwOnlyPage,
-//   showBlank,
-//   displaySections,
-//   sort = "createdTime_dec",
-// }: PostPreviewContainerProps) => {
-//   const [isLoading, setIsLoading] = useState(true);
-//   const [sortBy, setSortBy] = useState(sort);
-//   const [allPostPreviews, setAllPostPreviews] = useState<PostPreview[]>([]);
-//   const [visiblePostPreviews, setVisiblePostPreviews] = useState<PostPreview[]>([]);
-//   const [currentBaseIdx, setCurrentBaseIdx] = useState(0);
-
-//   const clickToNextPage = () => {
-//     if (currentBaseIdx + postsPerPage >= allPostPreviews.length) {
-//       setCurrentBaseIdx(currentBaseIdx);
-//     } else {
-//       setCurrentBaseIdx(currentBaseIdx + postsPerPage);
-//     }
-//   };
-
-//   const clickToPrevPage = () => {
-//     if (currentBaseIdx - postsPerPage > 0) {
-//       setCurrentBaseIdx(currentBaseIdx - postsPerPage);
-//     } else {
-//       setCurrentBaseIdx(0);
-//     }
-//   };
-
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       try {
-//         const result = await getPosts(sections);
-//         const transformedPreviews = transformToPostPreview(result);
-//         const sortedPreviews = performSortPosts(transformedPreviews, sortBy);
-//         setAllPostPreviews(sortedPreviews);
-//         setIsLoading(false);
-//       } catch (error) {
-//         console.error("Error fetching posts:", error);
-//         toast.warning("Failed to load posts.");
-//         setIsLoading(false);
-//       }
-//     };
-//     fetchData();
-//     // eslint-disable-next-line react-hooks/exhaustive-deps
-//   }, []);
-
-//   useEffect(() => {
-//     // Update visible post previews when all post previews or starting index changes
-//     const newVisiblePostPreviews = allPostPreviews.slice(currentBaseIdx, currentBaseIdx + postsPerPage);
-//     setVisiblePostPreviews(newVisiblePostPreviews);
-//   }, [allPostPreviews, currentBaseIdx, postsPerPage]);
-
-//   if (isLoading) {
-//     return <div>Loading...</div>;
-//   }
-
-//   // Calculate the number of blank posts needed on the last page
-//   const numBlankPosts =
-//     showBlank && visiblePostPreviews.length < postsPerPage ? postsPerPage - visiblePostPreviews.length : 0;
-
-//   // Create an array of blank posts
-//   const blankPosts = Array.from({ length: numBlankPosts }, (_, i) => (
-//     <PostLink key={`blank_${i}`} postPreview={null} isMainPage={isMainPage} displaySections={displaySections} />
-//   ));
-
-//   return (
-//     <div className="flex flex-col">
-//       {!isMainPage && (
-//         <PostTopbar isVeiwOnlyPage={isVeiwOnlyPage} isMainPage={isMainPage} displaySections={displaySections} />
-//       )}
-
-//       <div className="w-full h-fit">
-//         {visiblePostPreviews.map((postPreview, i) => (
-//           <PostLink
-//             key={i}
-//             postPreview={postPreview}
-//             isVeiwOnlyPage={isVeiwOnlyPage}
-//             isMainPage={isMainPage}
-//             displaySections={displaySections}
-//           />
-//         ))}
-//         {blankPosts}
-//       </div>
-//       {/* <Button onClick={clickToPrevPage} className={"h-3 w-3"}>
-//         Prev
-//       </Button>
-//       <Button onClick={clickToNextPage} className={"h-3 w-3"}>
-//         NEXT
-//       </Button> */}
-//       <PostPagination
-//         setCurrentBaseIdx={setCurrentBaseIdx}
-//         postsPerPage={postsPerPage}
-//         currentBaseIdx={currentBaseIdx}
-//         allPostsLength={allPostPreviews.length}
-//       />
-//       <div className="flex w-full border-b-[1px] border-black text-base justify-between items-center uppercase"></div>
-//     </div>
-//   );
-// };
-
-// export default PostPreviewContainer;
-
 const PostPreviewContainer = ({
   isMainPage,
   sections,
@@ -132,37 +29,48 @@ const PostPreviewContainer = ({
   isVeiwOnlyPage,
   showBlank,
   displaySections,
-  sort = "createdTime_dec",
+  sort = 'createdTime_dec',
 }: PostPreviewContainerProps) => {
   const [isLoading, setIsLoading] = useState(true);
-  const [sortBy, setSortBy] = useState(sort);
   const [allPostPreviews, setAllPostPreviews] = useState<PostPreview[]>([]);
-  const [visiblePostPreviews, setVisiblePostPreviews] = useState<PostPreview[]>([]);
+  const [visiblePostPreviews, setVisiblePostPreviews] = useState<PostPreview[]>(
+    []
+  );
   const [currentPage, setCurrentPage] = useState(1);
+  const [currentUser, setCurrentUser] = useState<User | null>(null);
 
   const totalPages = Math.ceil(allPostPreviews.length / postsPerPage);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await getPosts(sections);
-        const transformedPreviews = transformToPostPreview(result);
-        const sortedPreviews = performSortPosts(transformedPreviews, sortBy);
+        // Fetch posts
+        const postsResult = await getPosts(sections);
+        const transformedPreviews = transformToPostPreview(postsResult);
+
+        // Fetch current user
+        const user = await getCurrentUser();
+        setCurrentUser(user);
+
+        // Sort posts
+        const sortedPreviews = performSortPosts(transformedPreviews, sort);
         setAllPostPreviews(sortedPreviews);
         setIsLoading(false);
       } catch (error) {
-        console.error("Error fetching posts:", error);
-        toast.warning("Failed to load posts.");
+        console.error('Error fetching posts or user:', error);
+        toast.warning('Failed to load posts or user data.');
         setIsLoading(false);
       }
     };
     fetchData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sections, sortBy]);
+  }, [sections, sort]);
 
   useEffect(() => {
     const startIndex = (currentPage - 1) * postsPerPage;
-    const newVisiblePostPreviews = allPostPreviews.slice(startIndex, startIndex + postsPerPage);
+    const newVisiblePostPreviews = allPostPreviews.slice(
+      startIndex,
+      startIndex + postsPerPage
+    );
     setVisiblePostPreviews(newVisiblePostPreviews);
   }, [allPostPreviews, currentPage, postsPerPage]);
 
@@ -172,20 +80,32 @@ const PostPreviewContainer = ({
 
   // Calculate the number of blank posts needed on the last page
   const numBlankPosts =
-    showBlank && visiblePostPreviews.length < postsPerPage ? postsPerPage - visiblePostPreviews.length : 0;
+    showBlank && visiblePostPreviews.length < postsPerPage
+      ? postsPerPage - visiblePostPreviews.length
+      : 0;
 
   // Create an array of blank posts
   const blankPosts = Array.from({ length: numBlankPosts }, (_, i) => (
-    <PostLink key={`blank_${i}`} postPreview={null} isMainPage={isMainPage} displaySections={displaySections} />
+    <PostLink
+      key={`blank_${i}`}
+      postPreview={null}
+      isMainPage={isMainPage}
+      displaySections={displaySections}
+      currentUser={null}
+    />
   ));
 
   return (
-    <div className="flex flex-col">
+    <div className='flex flex-col'>
       {!isMainPage && (
-        <PostTopbar isVeiwOnlyPage={isVeiwOnlyPage} isMainPage={isMainPage} displaySections={displaySections} />
+        <PostTopbar
+          isVeiwOnlyPage={isVeiwOnlyPage}
+          isMainPage={isMainPage}
+          displaySections={displaySections}
+        />
       )}
 
-      <div className="w-full h-fit">
+      <div className='w-full h-fit'>
         {visiblePostPreviews.map((postPreview, i) => (
           <PostLink
             key={i}
@@ -193,14 +113,19 @@ const PostPreviewContainer = ({
             isVeiwOnlyPage={isVeiwOnlyPage}
             isMainPage={isMainPage}
             displaySections={displaySections}
+            currentUser={currentUser}
           />
         ))}
         {blankPosts}
       </div>
       {!isMainPage && (
         <>
-          <PostPagination setCurrentPage={setCurrentPage} currentPage={currentPage} totalPages={totalPages} />
-          <div className="flex w-full border-b-[1px] border-black text-base justify-between items-center uppercase"></div>
+          <PostPagination
+            setCurrentPage={setCurrentPage}
+            currentPage={currentPage}
+            totalPages={totalPages}
+          />
+          <div className='flex w-full border-b-[1px] border-black text-base justify-between items-center uppercase'></div>
         </>
       )}
     </div>

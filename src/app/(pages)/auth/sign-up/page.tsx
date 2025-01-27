@@ -1,23 +1,23 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
+import Snackbar from "@mui/material/Snackbar";
+import Alert from "@mui/material/Alert";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { colors } from "@/app/colors";
-import ReactGoogleAutocomplete from "react-google-autocomplete";
+import { AlertColor } from "@mui/material/Alert";
 
-// TODO remove, this demo shouldn't need to reset the theme.
-// const defaultTheme = createTheme();
+const INNERGARDEN_API = process.env.NEXT_PUBLIC_INNERGARDEN_API;
+//const INNERGARDEN_API = "http://localhost:7071";
 
 function Copyright(props: any) {
   return (
@@ -44,13 +44,63 @@ const defaultTheme = createTheme({
 });
 
 export default function SignUp() {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const [openSnackbar, setOpenSnackbar] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState("");
+  const [snackbarSeverity, setSnackbarSeverity] = useState<AlertColor>("success");
+
+  const handleCloseSnackbar = () => {
+    setOpenSnackbar(false);
+  };
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+  
+    try {
+      const response = await fetch(INNERGARDEN_API+`/sign-up`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          userEmail: data.get("email"),
+          userPassword: data.get("password"),
+          userFirstName: data.get("firstName"),
+          userLastName: data.get("lastName"),
+        }),
+      });
+  
+      if (response.ok) {
+
+        const result = await response.json();
+        setSnackbarMessage("Sign up successful!");
+        setSnackbarSeverity("success");
+        setOpenSnackbar(true);
+  
+        setTimeout(() => {
+          window.location.href = "/auth/sign-in";
+        }, 2000);
+      } else {
+ 
+        const errorData = await response.json();
+  
+        if (response.status === 409) {
+          setSnackbarMessage(errorData.detail || "User already exists. Please use a different email.");
+        } else if (response.status === 500) {
+          setSnackbarMessage(errorData.detail || "Internal server error. Please try again later.");
+        } else {
+          setSnackbarMessage(errorData.detail || "Sign up failed. Please try again.");
+        }
+  
+        setSnackbarSeverity("error");
+        setOpenSnackbar(true);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      setSnackbarMessage("An unexpected error occurred. Please try again.");
+      setSnackbarSeverity("error");
+      setOpenSnackbar(true);
+    }
   };
 
   return (
@@ -111,40 +161,36 @@ export default function SignUp() {
                   autoComplete="new-password"
                 />
               </Grid>
-              {/* <Grid item xs={12} sm={6}>
-                <TextField required fullWidth id="primary" label="Primary Language" name="primary" />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField required fullWidth id="secondary" label="Secondary Language" name="Secondary" />
-              </Grid>
-              <Grid item xs={12}>
-                <Grid item xs={12}>
-
-                  <TextField
-                    required
-                    fullWidth
-                    id="location"
-                    label="Location"
-                    name="location"
-                    autoComplete="off" 
-                    InputProps={{
-                      inputComponent: ReactGoogleAutocomplete,
-                      inputProps: {
-                        apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
-                        placeholder: "Location",
-                      },
-                    }}
-                  />
-                </Grid> 
-              </Grid>*/}
             </Grid>
-            <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
-              Sign Up
-            </Button>
+            <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{
+                  mt: 3,
+                  mb: 2,
+                  backgroundColor: "primary.main",
+                  "&:hover": {
+                    backgroundColor: "primary.light", 
+                  },
+                }}
+              >
+                Sign Up
+              </Button>
           </Box>
           <Copyright sx={{ mt: 5 }} />
         </Box>
       </Container>
+      <Snackbar
+        open={openSnackbar}
+        autoHideDuration={6000}
+        onClose={handleCloseSnackbar}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+      >
+        <Alert onClose={handleCloseSnackbar} severity={snackbarSeverity} sx={{ width: "100%" }}>
+          {snackbarMessage}
+        </Alert>
+      </Snackbar>
     </ThemeProvider>
   );
 }

@@ -54,7 +54,7 @@ const DrawerComp: React.FC<DrawerCompProps> = ({ initialPages, isSmall }) => {
                   selected={openSubDrawer === index} // Set selected based on whether sub-drawer is open
                 >
                   <ListItemText primary={page.text} primaryTypographyProps={{ fontSize: "1rem" }} />
-                  {openSubDrawer === index ? <ExpandMoreRoundedIcon /> : <ExpandLessRoundedIcon />}
+                  {openSubDrawer === index ? <ExpandLessRoundedIcon /> : <ExpandMoreRoundedIcon />}
                 </StyledListItemButton>
               ) : (
                 <Link href={page.route} passHref>
