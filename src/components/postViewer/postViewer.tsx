@@ -14,6 +14,19 @@ interface PostViewerProps {
   postID: string;
 }
 
+const formatSection = (section: string): string => {
+  switch (section) {
+    case 'announcement':
+      return 'Announcement';
+    case 'news':
+      return 'News';
+    case 'faq':
+      return 'FAQ';
+    default:
+      return 'Unknown Section';
+  }
+};
+
 const PostViewer = ({ postID }: PostViewerProps) => {
   const [post, setPost] = useState<any>(null);
   const [loading, setLoading] = useState(true);
@@ -64,25 +77,23 @@ const PostViewer = ({ postID }: PostViewerProps) => {
       style={{
         backgroundColor: '#ffffff',
         padding: '2rem',
-        maxWidth: '800px',
+        maxWidth: '100%',
+        minHeight: '100%',
         margin: '0 auto',
         borderRadius: '8px',
-        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
       }}
     >
-      {/* 포스트 타입 */}
       <div
         style={{
-          fontSize: '0.9rem',
+          fontSize: '1.4rem',
           color: '#555',
           marginBottom: '1rem',
           textAlign: 'left',
         }}
       >
-        <strong>{post.section}</strong>
+        <strong>{formatSection(post.section)}</strong>
       </div>
 
-      {/* 작성 시간 및 작성자 */}
       <div
         style={{
           display: 'flex',
@@ -92,15 +103,26 @@ const PostViewer = ({ postID }: PostViewerProps) => {
           marginBottom: '1.5rem',
         }}
       >
-        <div></div> {/* 왼쪽 여백 */}
+        <div></div>
         <div style={{ textAlign: 'right' }}>
           <p>
-            <strong>At:</strong> {new Date(post.createdTime).toLocaleString()}
+            <strong>Created:</strong>{' '}
+            {new Date(post.createdTime).toLocaleDateString()}{' '}
+            {new Date(post.createdTime).toLocaleTimeString([], {
+              hour: 'numeric',
+              minute: 'numeric',
+              hourCycle: 'h12',
+            })}
           </p>
           {post.editedTime && (
             <p>
               <strong>Edited:</strong>{' '}
-              {new Date(post.editedTime).toLocaleString()}
+              {new Date(post.editedTime).toLocaleDateString()}{' '}
+              {new Date(post.editedTime).toLocaleTimeString([], {
+                hour: 'numeric',
+                minute: 'numeric',
+                hourCycle: 'h12',
+              })}
             </p>
           )}
           <p>
@@ -109,7 +131,6 @@ const PostViewer = ({ postID }: PostViewerProps) => {
         </div>
       </div>
 
-      {/* 포스트 제목 */}
       <h1
         style={{
           fontSize: '2rem',
@@ -122,12 +143,12 @@ const PostViewer = ({ postID }: PostViewerProps) => {
         {post.title}
       </h1>
 
-      {/* 포스트 본문 */}
       <div
         style={{
           marginTop: '1.5rem',
           padding: '1rem',
           backgroundColor: '#ffffff',
+          minHeight: '300px',
           borderRadius: '8px',
           border: '1px solid #ddd',
         }}
@@ -137,7 +158,6 @@ const PostViewer = ({ postID }: PostViewerProps) => {
           readOnly={true}
           theme='bubble'
           style={{
-            fontSize: '1rem',
             lineHeight: '1.5',
             color: '#333',
           }}

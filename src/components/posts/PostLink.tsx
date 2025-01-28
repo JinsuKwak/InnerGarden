@@ -30,6 +30,45 @@ const PostLinkProps = ({
   const isSmall = useIsSmall();
   const isMedium = useIsMedium();
 
+  const INNERGARDEN_API = process.env.NEXT_PUBLIC_INNERGARDEN_API;
+
+  const handleDeletePost = async (postID: string, currentUser: User | null) => {
+    if (!currentUser) {
+      alert('User is not logged in.');
+      return;
+    }
+
+    try {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        throw new Error('User token not found. Please log in again.');
+      }
+
+      const response = await fetch(
+        INNERGARDEN_API + `/posts/delete/${postID}`,
+        {
+          method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ token }),
+        }
+      );
+
+      if (response.ok) {
+        alert('Post deleted successfully');
+        window.location.href = `/posts/${postPreview?.section}`;
+      } else {
+        const errorData = await response.json();
+        console.error('Failed to delete post:', errorData);
+        alert(`Failed to delete post: ${errorData.message || 'Unknown error'}`);
+      }
+    } catch (error) {
+      console.error('Error deleting post:', error);
+      alert('Error deleting post. Please try again later.');
+    }
+  };
+
   const displaySection = (section: string): string => {
     switch (section) {
       case 'announcement':
@@ -159,6 +198,9 @@ const PostLinkProps = ({
                   </StyledIconButton>
                   <StyledIconButton
                     disabled={!isEditable()}
+                    onClick={() =>
+                      handleDeletePost(postPreview?.postID ?? '', currentUser)
+                    }
                     className={`text-lg transition-all ${
                       isEditable()
                         ? 'text-red-300 hover:text-red-500'
